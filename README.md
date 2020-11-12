@@ -1,1 +1,0 @@
-# deaily_payment_system_c_sharp

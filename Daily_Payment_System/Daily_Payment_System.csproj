@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\BaseConnection.cs" />
+    <Compile Include="Class\ConstantField.cs" />
+    <Compile Include="Class\MsgBox.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +181,7 @@
       <DependentUpon>DPS_Model.edmx</DependentUpon>
       <LastGenOutput>DPS_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\question.png" />
     <None Include="Resources\infor.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\warning.png" />

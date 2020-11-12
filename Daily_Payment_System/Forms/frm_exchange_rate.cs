@@ -1,4 +1,5 @@
-﻿using Daily_Payment_System.Msg;
+﻿using Daily_Payment_System.Class;
+using Daily_Payment_System.Msg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace Daily_Payment_System.Forms
     public partial class frm_exchange_rate : Form
     {
         public Action NotifyMainFormToOpenChildForm2;
+        public Action ShowMessageBox;
+
         public frm_exchange_rate()
         {
             InitializeComponent();
@@ -26,7 +29,8 @@ namespace Daily_Payment_System.Forms
 
         private void btnShowDate_Click(object sender, EventArgs e)
         {
-            new frm_message().ShowDialog();
+            MsgBox.showInfor("Message");
+            
         }
     }
 }
