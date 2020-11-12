@@ -29,7 +29,7 @@ namespace Daily_Payment_System.Forms
 
         private void btnShowDate_Click(object sender, EventArgs e)
         {
-            MsgBox.showInfor("Message");
+            MsgBox.showError("Message");
             
         }
     }
