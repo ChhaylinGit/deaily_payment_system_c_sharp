@@ -24,5 +24,12 @@ namespace Daily_Payment_System.Class
         public static Image ICON_MSG_ERROR = Properties.Resources.error;
         public static Image ICON_MSG_QUESTION = Properties.Resources.question;
 
+        public static string SERVER_IP = Properties.Settings.Default.SERVER_IP;
+        public static string DATABASE = Properties.Settings.Default.DATABASE;
+        public static string USER = Properties.Settings.Default.USER;
+        public static string PASSWORD = Properties.Settings.Default.PASSWORD;
+
+        public static string CONNECTION_STRING = "Server="+SERVER_IP+";Database="+DATABASE+";User Id="+USER+";Password="+PASSWORD+";";
+
     }
 }

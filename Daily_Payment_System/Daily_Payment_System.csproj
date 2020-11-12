@@ -58,6 +58,12 @@
     <Compile Include="Class\BaseConnection.cs" />
     <Compile Include="Class\ConstantField.cs" />
     <Compile Include="Class\MsgBox.cs" />
+    <Compile Include="Config\frm_connection_config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\frm_connection_config.Designer.cs">
+      <DependentUpon>frm_connection_config.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Config\frm_connection_config.resx">
+      <DependentUpon>frm_connection_config.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_add_rate.resx">
       <DependentUpon>frm_add_rate.cs</DependentUpon>
     </EmbeddedResource>

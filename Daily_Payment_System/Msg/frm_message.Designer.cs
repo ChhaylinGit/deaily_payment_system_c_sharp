@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblMessageContent = new System.Windows.Forms.Label();
-            this.lblMessageTitle = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblMessageTitle = new System.Windows.Forms.Label();
             this.picIcon = new System.Windows.Forms.PictureBox();
+            this.lblMessageContent = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -51,37 +51,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.panel1.Size = new System.Drawing.Size(415, 49);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.lblMessageTitle);
-            this.panel2.Controls.Add(this.picIcon);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(415, 47);
-            this.panel2.TabIndex = 1;
-            // 
-            // lblMessageContent
-            // 
-            this.lblMessageContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMessageContent.Location = new System.Drawing.Point(0, 47);
-            this.lblMessageContent.Name = "lblMessageContent";
-            this.lblMessageContent.Size = new System.Drawing.Size(415, 88);
-            this.lblMessageContent.TabIndex = 2;
-            this.lblMessageContent.Text = "តើលោកអ្នកពិតជាចង់ចាកចេញមែនឬទេ?";
-            this.lblMessageContent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblMessageTitle
-            // 
-            this.lblMessageTitle.AutoSize = true;
-            this.lblMessageTitle.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageTitle.Location = new System.Drawing.Point(55, 17);
-            this.lblMessageTitle.Name = "lblMessageTitle";
-            this.lblMessageTitle.Size = new System.Drawing.Size(46, 15);
-            this.lblMessageTitle.TabIndex = 3;
-            this.lblMessageTitle.Text = "Warning";
             // 
             // btnOK
             // 
@@ -110,6 +79,27 @@
             this.btnExit.Visible = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.lblMessageTitle);
+            this.panel2.Controls.Add(this.picIcon);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(415, 47);
+            this.panel2.TabIndex = 1;
+            // 
+            // lblMessageTitle
+            // 
+            this.lblMessageTitle.AutoSize = true;
+            this.lblMessageTitle.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageTitle.Location = new System.Drawing.Point(55, 17);
+            this.lblMessageTitle.Name = "lblMessageTitle";
+            this.lblMessageTitle.Size = new System.Drawing.Size(46, 15);
+            this.lblMessageTitle.TabIndex = 3;
+            this.lblMessageTitle.Text = "Warning";
+            // 
             // picIcon
             // 
             this.picIcon.Image = global::Daily_Payment_System.Properties.Resources.question;
@@ -119,6 +109,16 @@
             this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIcon.TabIndex = 0;
             this.picIcon.TabStop = false;
+            // 
+            // lblMessageContent
+            // 
+            this.lblMessageContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMessageContent.Location = new System.Drawing.Point(0, 47);
+            this.lblMessageContent.Name = "lblMessageContent";
+            this.lblMessageContent.Size = new System.Drawing.Size(415, 88);
+            this.lblMessageContent.TabIndex = 2;
+            this.lblMessageContent.Text = "តើលោកអ្នកពិតជាចង់ចាកចេញមែនឬទេ?";
+            this.lblMessageContent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frm_message
             // 
@@ -130,8 +130,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Khmer OS Battambang", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_message";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
