@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DailyPaymentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_account_type">
+    <Key>
+      <PropertyRef Name="acc_type_id" />
+    </Key>
+    <Property Name="acc_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="acc_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_currency">
+    <Key>
+      <PropertyRef Name="cur_id" />
+    </Key>
+    <Property Name="cur_id" Type="int" Nullable="false" />
+    <Property Name="currency" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_daily_payment">
+    <Key>
+      <PropertyRef Name="dlp_id" />
+    </Key>
+    <Property Name="dlp_id" Type="int" Nullable="false" />
+    <Property Name="acc_type_id" Type="int" Nullable="false" />
+    <Property Name="cur_id" Type="int" Nullable="false" />
+    <Property Name="ammount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="create_date" Type="datetime" />
+    <Property Name="update_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_daily_profit">
+    <Key>
+      <PropertyRef Name="pro_id" />
+    </Key>
+    <Property Name="pro_id" Type="int" Nullable="false" />
+    <Property Name="pro_type_id" Type="int" Nullable="false" />
+    <Property Name="rate_id" Type="int" Nullable="false" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_daily_rate">
+    <Key>
+      <PropertyRef Name="rate_id" />
+    </Key>
+    <Property Name="rate_id" Type="int" Nullable="false" />
+    <Property Name="1_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="1_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="2_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="2_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="update_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_profit_type">
+    <Key>
+      <PropertyRef Name="pro_type_id" />
+    </Key>
+    <Property Name="pro_type_id" Type="int" Nullable="false" />
+    <Property Name="pro_type" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="update_date" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="DailyPaymentModelStoreContainer">
+    <EntitySet Name="tbl_account_type" EntityType="Self.tbl_account_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_currency" EntityType="Self.tbl_currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_daily_payment" EntityType="Self.tbl_daily_payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_daily_profit" EntityType="Self.tbl_daily_profit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_daily_rate" EntityType="Self.tbl_daily_rate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_profit_type" EntityType="Self.tbl_profit_type" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
