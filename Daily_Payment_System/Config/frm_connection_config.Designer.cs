@@ -155,6 +155,7 @@
             this.btnTestConnection.TabIndex = 4;
             this.btnTestConnection.Text = "Test Connection";
             this.btnTestConnection.UseVisualStyleBackColor = true;
+            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
             // 
             // frm_connection_config
             // 

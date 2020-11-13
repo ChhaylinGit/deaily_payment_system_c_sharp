@@ -58,6 +58,7 @@
     <Compile Include="Class\BaseConnection.cs" />
     <Compile Include="Class\ConstantField.cs" />
     <Compile Include="Class\MsgBox.cs" />
+    <Compile Include="Class\Setting.cs" />
     <Compile Include="Config\frm_connection_config.cs">
       <SubType>Form</SubType>
     </Compile>

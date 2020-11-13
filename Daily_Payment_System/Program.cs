@@ -16,10 +16,9 @@ namespace Daily_Payment_System
         private static bool connectionSuccess()
         {
             bool result = false;
-            SqlConnection connection = new SqlConnection(ConstantField.CONNECTION_STRING);
             try
             {
-                connection.Open();
+                Setting.connection.Open();
                 result = true;
             }
             catch (Exception ex)
@@ -28,7 +27,7 @@ namespace Daily_Payment_System
             }
             finally
             {
-                connection.Close();   
+                Setting.connection.Close();
             }
             return result;
         }
