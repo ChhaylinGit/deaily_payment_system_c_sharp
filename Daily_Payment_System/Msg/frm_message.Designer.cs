@@ -115,10 +115,11 @@
             this.lblMessageContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMessageContent.Location = new System.Drawing.Point(0, 47);
             this.lblMessageContent.Name = "lblMessageContent";
+            this.lblMessageContent.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.lblMessageContent.Size = new System.Drawing.Size(415, 88);
             this.lblMessageContent.TabIndex = 2;
             this.lblMessageContent.Text = "តើលោកអ្នកពិតជាចង់ចាកចេញមែនឬទេ?";
-            this.lblMessageContent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMessageContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frm_message
             // 

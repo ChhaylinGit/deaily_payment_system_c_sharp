@@ -21,19 +21,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_daily_rate">
-      <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_rate">
-        <MappingFragment StoreEntitySet="tbl_daily_rate">
-          <ScalarProperty Name="rate_id" ColumnName="rate_id" />
-          <ScalarProperty Name="C1_sale_out" ColumnName="1_sale_out" />
-          <ScalarProperty Name="C1_buy_in" ColumnName="1_buy_in" />
-          <ScalarProperty Name="C2_sale_out" ColumnName="2_sale_out" />
-          <ScalarProperty Name="C2_buy_in" ColumnName="2_buy_in" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="update_date" ColumnName="update_date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tbl_profit_type">
       <EntityTypeMapping TypeName="DailyPaymentModel.tbl_profit_type">
         <MappingFragment StoreEntitySet="tbl_profit_type">
@@ -64,6 +51,19 @@
           <ScalarProperty Name="rate_id" ColumnName="rate_id" />
           <ScalarProperty Name="pro_type_id" ColumnName="pro_type_id" />
           <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_daily_rate">
+      <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_rate">
+        <MappingFragment StoreEntitySet="tbl_daily_rate">
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="C2_buy_in" ColumnName="2_buy_in" />
+          <ScalarProperty Name="C2_sale_out" ColumnName="2_sale_out" />
+          <ScalarProperty Name="C1_buy_in" ColumnName="1_buy_in" />
+          <ScalarProperty Name="C1_sale_out" ColumnName="1_sale_out" />
+          <ScalarProperty Name="rate_id" ColumnName="rate_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Daily_Payment_System.Class;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +23,34 @@ namespace Daily_Payment_System.Forms
         private void frm_add_rate_Load(object sender, EventArgs e)
         {
            
+        }
+      
+        private bool saveExchangeRate()
+        {
+            bool result = false;
+            try
+            {
+                tbl_daily_rate rate = new tbl_daily_rate();
+                rate.C1_sale_out = Convert.ToDecimal(msk_1_sale_out.Text.Trim());
+                rate.C1_buy_in = Convert.ToDecimal(msk_1_buy_in.Text.Trim());
+                rate.C2_sale_out = Convert.ToDecimal(msk_2_sale_out.Text.Trim());
+                rate.C2_buy_in = Convert.ToDecimal(msk_2_buy_in.Text.Trim());
+                ConstantField.entities.tbl_daily_rate.Add(rate);
+                result = ConstantField.entities.SaveChanges() > 1;
+            }
+            catch (Exception ex)
+            {
+                MsgBox.showWarning(ex.Message);
+            }
+            return result;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (saveExchangeRate())
+            {
+                MsgBox.showInfor("ប្រតិបត្តិការទទួលបានជោគជ័យ");
+            }
         }
     }
 }

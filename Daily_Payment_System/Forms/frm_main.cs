@@ -25,12 +25,7 @@ namespace Daily_Payment_System.Forms
 
         private void initChildForm()
         {
-            exchange_rate = new frm_exchange_rate();
-            exchange_rate.MdiParent = this;
-            exchange_rate.NotifyMainFormToOpenChildForm2 += NotifyMainFormToOpenChildForm2;
-            exchange_rate.ShowMessageBox += ShowMessageBox;
-
-
+            
         }
 
         private void ShowMessageBox()
@@ -42,10 +37,12 @@ namespace Daily_Payment_System.Forms
 
         private void tsm_exchange_rate_Click(object sender, EventArgs e)
         {
+            exchange_rate = new frm_exchange_rate();
+            exchange_rate.MdiParent = this;
+            exchange_rate.NotifyMainFormToOpenChildForm2 += NotifyMainFormToOpenChildForm2;
+            exchange_rate.ShowMessageBox += ShowMessageBox;
             exchange_rate.Show();
         }
-
-        
 
         private void NotifyMainFormToOpenChildForm2()
         {

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.msk_1_slae_out = new System.Windows.Forms.MaskedTextBox();
             this.msk_1_buy_in = new System.Windows.Forms.MaskedTextBox();
+            this.msk_1_sale_out = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.msk_2_buy_in = new System.Windows.Forms.MaskedTextBox();
             this.msk_2_sale_out = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,7 +52,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.msk_1_buy_in);
-            this.groupBox1.Controls.Add(this.msk_1_slae_out);
+            this.groupBox1.Controls.Add(this.msk_1_sale_out);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -66,6 +66,71 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ទិញចូល";
+            // 
+            // msk_1_buy_in
+            // 
+            this.msk_1_buy_in.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msk_1_buy_in.Location = new System.Drawing.Point(118, 97);
+            this.msk_1_buy_in.Mask = "0000";
+            this.msk_1_buy_in.Name = "msk_1_buy_in";
+            this.msk_1_buy_in.Size = new System.Drawing.Size(100, 26);
+            this.msk_1_buy_in.TabIndex = 5;
+            this.msk_1_buy_in.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.msk_1_buy_in.ValidatingType = typeof(int);
+            // 
+            // msk_1_sale_out
+            // 
+            this.msk_1_sale_out.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msk_1_sale_out.Location = new System.Drawing.Point(118, 33);
+            this.msk_1_sale_out.Mask = "0000";
+            this.msk_1_sale_out.Name = "msk_1_sale_out";
+            this.msk_1_sale_out.Size = new System.Drawing.Size(100, 26);
+            this.msk_1_sale_out.TabIndex = 4;
+            this.msk_1_sale_out.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.msk_1_sale_out.ValidatingType = typeof(int);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Khmer OS Muol Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(18, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "អត្រាទិញចូលៈ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Khmer OS Muol Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(18, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "អត្រាលក់ចេញៈ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Khmer OS Battambang", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ដុល្លា->ខ្មែរ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Khmer OS Battambang", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(19, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ខ្មែរ => ដុល្លា";
             // 
             // groupBox2
             // 
@@ -84,93 +149,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "លក់ចេញ";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 156);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(514, 48);
-            this.panel1.TabIndex = 2;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Font = new System.Drawing.Font("Khmer OS Battambang", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(420, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(87, 38);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "រក្សាទុក";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Khmer OS Battambang", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(19, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ខ្មែរ => ដុល្លា\r\n";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Khmer OS Battambang", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ដុល្លា->ខ្មែរ\r\n";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Khmer OS Muol Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(18, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "អត្រាលក់ចេញៈ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Khmer OS Muol Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(18, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "អត្រាលក់ចេញៈ";
-            // 
-            // msk_1_slae_out
-            // 
-            this.msk_1_slae_out.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_1_slae_out.Location = new System.Drawing.Point(118, 33);
-            this.msk_1_slae_out.Mask = "0000";
-            this.msk_1_slae_out.Name = "msk_1_slae_out";
-            this.msk_1_slae_out.Size = new System.Drawing.Size(100, 26);
-            this.msk_1_slae_out.TabIndex = 4;
-            this.msk_1_slae_out.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.msk_1_slae_out.ValidatingType = typeof(int);
-            // 
-            // msk_1_buy_in
-            // 
-            this.msk_1_buy_in.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_1_buy_in.Location = new System.Drawing.Point(118, 97);
-            this.msk_1_buy_in.Mask = "0000";
-            this.msk_1_buy_in.Name = "msk_1_buy_in";
-            this.msk_1_buy_in.Size = new System.Drawing.Size(100, 26);
-            this.msk_1_buy_in.TabIndex = 5;
-            this.msk_1_buy_in.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.msk_1_buy_in.ValidatingType = typeof(int);
             // 
             // msk_2_buy_in
             // 
@@ -237,6 +215,29 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "ខ្មែរ => ដុល្លា";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 156);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(514, 48);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Font = new System.Drawing.Font("Khmer OS Battambang", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Location = new System.Drawing.Point(420, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(87, 38);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "រក្សាទុក";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // frm_add_rate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -273,7 +274,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox msk_1_buy_in;
-        private System.Windows.Forms.MaskedTextBox msk_1_slae_out;
+        private System.Windows.Forms.MaskedTextBox msk_1_sale_out;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox msk_2_buy_in;

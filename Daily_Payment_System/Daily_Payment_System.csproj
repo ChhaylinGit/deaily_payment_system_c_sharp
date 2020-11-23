@@ -89,37 +89,37 @@
     <Compile Include="Forms\frm_main.Designer.cs">
       <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\DPS_Model.Context.cs">
+    <Compile Include="DPS_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DPS_Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DPS_Model.cs">
+    <Compile Include="DPS_Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DPS_Model.Designer.cs">
+    <Compile Include="DPS_Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DPS_Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbl_account_type.cs">
+    <Compile Include="tbl_account_type.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbl_currency.cs">
+    <Compile Include="tbl_currency.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbl_daily_payment.cs">
+    <Compile Include="tbl_daily_payment.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbl_daily_profit.cs">
+    <Compile Include="tbl_daily_profit.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbl_daily_rate.cs">
+    <Compile Include="tbl_daily_rate.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbl_profit_type.cs">
+    <Compile Include="tbl_profit_type.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Msg\frm_message.cs">
@@ -155,11 +155,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="Model\DPS_Model.edmx">
+    <EntityDeploy Include="DPS_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DPS_Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\DPS_Model.edmx.diagram">
+    <None Include="DPS_Model.edmx.diagram">
       <DependentUpon>DPS_Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -176,17 +176,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\DPS_Model.Context.tt">
+    <Content Include="DPS_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DPS_Model.edmx</DependentUpon>
       <LastGenOutput>DPS_Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\DPS_Model.tt">
+    <Content Include="DPS_Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DPS_Model.edmx</DependentUpon>
       <LastGenOutput>DPS_Model.cs</LastGenOutput>

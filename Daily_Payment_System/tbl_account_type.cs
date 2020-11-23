@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Daily_Payment_System.Model
+namespace Daily_Payment_System
 {
     using System;
     using System.Collections.Generic;

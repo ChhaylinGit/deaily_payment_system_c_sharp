@@ -7,19 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Daily_Payment_System.Model
+namespace Daily_Payment_System
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_daily_rate
+    public partial class tbl_daily_profit
     {
+        public int pro_id { get; set; }
+        public int pro_type_id { get; set; }
         public int rate_id { get; set; }
-        public decimal C1_sale_out { get; set; }
-        public decimal C1_buy_in { get; set; }
-        public decimal C2_sale_out { get; set; }
-        public decimal C2_buy_in { get; set; }
+        public decimal amount { get; set; }
         public System.DateTime create_date { get; set; }
-        public Nullable<System.DateTime> update_date { get; set; }
     }
 }

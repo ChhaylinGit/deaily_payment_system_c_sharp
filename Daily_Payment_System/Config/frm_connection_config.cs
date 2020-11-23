@@ -19,15 +19,46 @@ namespace Daily_Payment_System.Config
             InitializeComponent();
         }
 
-        private void btnTestConnection_Click(object sender, EventArgs e)
+        private bool empty()
         {
-            Thread thread = new Thread(myThread);
-            thread.Start();
+            bool result = false;
+            string message = "";
+            if (string.IsNullOrEmpty(txtServerIP.Text.Trim()))
+            {
+                message += "- សូមបញ្ចូលSERVER_IP\n";
+            }
+            if (string.IsNullOrEmpty(txtDatabase.Text.Trim()))
+            {
+                message += "- សូមបញ្ចូលDATABASE\n";
+            }
+            if (string.IsNullOrEmpty(txtUser.Text.Trim()))
+            {
+                message += "- សូមបញ្ចូលUSER\n";
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            {
+                message += "- សូមបញ្ចូលPASSWORD";
+            }
+            if (!string.IsNullOrEmpty(message))
+            {
+                result = true;
+                MsgBox.showWarning(message);
+            }
+            return result;
         }
 
-        private void myThread()
+        private void btnTestConnection_Click(object sender, EventArgs e)
         {
-            btnTestConnection.Invoke(new MethodInvoker(delegate { Cursor = Cursors.WaitCursor; btnTestConnection.Enabled = false; btnTestConnection.Text = "Connecting..."; }));
+            if (!empty())
+            {
+                Thread thread = new Thread(testConnectionThread);
+                thread.Start();
+            }
+        }
+
+        private void testConnectionThread()
+        {
+            btnTestConnection.Invoke(new MethodInvoker(delegate { Cursor = Cursors.WaitCursor; btnTestConnection.Enabled = false; btnSave.Enabled = false; btnTestConnection.Text = "Connecting..."; }));
             if (Setting.testConnectionSuccess(txtServerIP.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text))
             {
                 MsgBox.showInfor("Connection Success!");
@@ -36,7 +67,33 @@ namespace Daily_Payment_System.Config
             {
                 MsgBox.showError("Connection Faild!");
             }
-            btnTestConnection.Invoke(new MethodInvoker(delegate { Cursor = Cursors.Default; btnTestConnection.Enabled = true; btnTestConnection.Text = "Test Connection"; }));
+            btnTestConnection.Invoke(new MethodInvoker(delegate { Cursor = Cursors.Default; btnTestConnection.Enabled = true; btnSave.Enabled = true; btnTestConnection.Text = "Test Connection"; }));
         }
+
+        private void saveConnectionThread()
+        {
+            btnSave.Invoke(new MethodInvoker(delegate { Cursor = Cursors.WaitCursor; btnSave.Enabled = false; btnTestConnection.Enabled = false; btnSave.Text = "Saving..."; }));
+            if (Setting.testConnectionSuccess(txtServerIP.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text))
+            {
+                btnSave.Invoke(new MethodInvoker(delegate { Cursor = Cursors.Default; btnTestConnection.Enabled = false; btnSave.Text = "Connected"; }));
+                Setting.saveConnection(txtServerIP.Text.Trim(), txtDatabase.Text.Trim(), txtUser.Text.Trim(), txtPassword.Text.Trim());
+                MsgBox.showInfor("Connection Success!");
+            }
+            else
+            {
+                btnSave.Invoke(new MethodInvoker(delegate { Cursor = Cursors.Default; btnSave.Enabled = true; btnTestConnection.Enabled = true; btnSave.Text = "រក្សាទុក"; }));
+                MsgBox.showError("Connection Faild!");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!empty())
+            {
+                Thread thread = new Thread(saveConnectionThread);
+                thread.Start();
+            }
+        }
+          
     }
 }

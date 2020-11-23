@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Daily_Payment_System.Class
 {
-    class ConstantField
+   public static class ConstantField
     {
         public const byte CODE_MSG_INFO = 1;
         public const byte CODE_MSG_WARNING = 2;
@@ -28,8 +28,8 @@ namespace Daily_Payment_System.Class
         public static string DATABASE = Properties.Settings.Default.DATABASE;
         public static string USER = Properties.Settings.Default.USER;
         public static string PASSWORD = Properties.Settings.Default.PASSWORD;
-
-        public static string CONNECTION_STRING = "Server="+SERVER_IP+";Database="+DATABASE+";User Id="+USER+";Password="+PASSWORD+";";
+        public static string CONNECTION_STRING = "Server="+ SERVER_IP + ";Database="+ DATABASE + ";User Id="+ USER + ";Password="+ PASSWORD + ";";
+        public static DailyPaymentEntities entities = new DailyPaymentEntities(Setting.getConnection());
 
     }
 }

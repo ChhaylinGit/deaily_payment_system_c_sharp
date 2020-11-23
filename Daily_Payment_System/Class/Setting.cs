@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+
 namespace Daily_Payment_System.Class
 {
     class Setting
@@ -29,6 +30,30 @@ namespace Daily_Payment_System.Class
                 sqlConnection.Close();
             }
             return result;
+        }
+
+        public static string getConnection()
+        {
+            string constr = "";
+            try
+            {
+                constr = @"metadata=res://*/DPS_Model.csdl|res://*/DPS_Model.csdl|res://*/DPS_Model.csdl;provider=System.Data.SqlClient;provider connection string=';data source=" + ConstantField.SERVER_IP + ";initial catalog=" + ConstantField.DATABASE + ";persist security info=True;user id=" + ConstantField.USER + ";password=" + ConstantField.PASSWORD + ";MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=500'";
+                //constr = @"metadata=res://*/DPS_Model.csdl|res://*/DPS_Model.ssdl|res://*/DPS_Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=DailyPayment;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;";
+            }
+            catch (Exception ex)
+            {
+                MsgBox.showWarning(ex.Message);
+            }
+            return constr;
+        }
+
+        public static void saveConnection(string serverip,string database,string user,string password)
+        {
+            Properties.Settings.Default.SERVER_IP = serverip;
+            Properties.Settings.Default.DATABASE = database;
+            Properties.Settings.Default.USER = user;
+            Properties.Settings.Default.PASSWORD = password;
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Daily_Payment_System.Class
+namespace Daily_Payment_System
 {
-    class BaseConnection : DbContext
+    public partial class DailyPaymentEntities : DbContext
     {
-        public BaseConnection(string conn) : base(conn)
+        public DailyPaymentEntities(string conn) : base(conn)
         {
             try
             {
@@ -18,7 +18,7 @@ namespace Daily_Payment_System.Class
 
             catch (Exception ex)
             {
-                //Msg.Error("Cannot connect server");
+                
             }
 
         }
