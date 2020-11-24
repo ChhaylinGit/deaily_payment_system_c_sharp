@@ -37,8 +37,9 @@ namespace Daily_Payment_System.Class
             string constr = "";
             try
             {
-                constr = @"metadata=res://*/DPS_Model.csdl|res://*/DPS_Model.csdl|res://*/DPS_Model.csdl;provider=System.Data.SqlClient;provider connection string=';data source=" + ConstantField.SERVER_IP + ";initial catalog=" + ConstantField.DATABASE + ";persist security info=True;user id=" + ConstantField.USER + ";password=" + ConstantField.PASSWORD + ";MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=500'";
+                //constr = @"metadata=res://*/DPS_Model.csdl|res://*/DPS_Model.csdl|res://*/DPS_Model.csdl;provider=System.Data.SqlClient;provider connection string=';data source=" + ConstantField.SERVER_IP + ";initial catalog=" + ConstantField.DATABASE + ";persist security info=True;user id=" + ConstantField.USER + ";password=" + ConstantField.PASSWORD + ";MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=500'";
                 //constr = @"metadata=res://*/DPS_Model.csdl|res://*/DPS_Model.ssdl|res://*/DPS_Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=DailyPayment;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;";
+                constr = "metadata=res://*/DPS_Model.csdl|res://*/DPS_Model.ssdl|res://*/DPS_Model.msl;provider=System.Data.SqlClient;provider connection string='data source =.; initial catalog = DailyPayment; user id = sa; password = 123456; MultipleActiveResultSets = True; App = EntityFramework'";
             }
             catch (Exception ex)
             {

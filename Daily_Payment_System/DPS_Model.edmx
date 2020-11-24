@@ -48,11 +48,11 @@
           <Key>
             <PropertyRef Name="rate_id" />
           </Key>
-          <Property Name="rate_id" Type="int" Nullable="false" />
-          <Property Name="1_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="1_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="2_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="2_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="rate_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="b_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="b_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="s_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="s_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="create_date" Type="datetime" Nullable="false" />
           <Property Name="update_date" Type="datetime" />
         </EntityType>
@@ -95,6 +95,27 @@
           <Property Name="status" Type="Boolean" Nullable="false" />
           <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="tbl_daily_payment">
+          <Key>
+            <PropertyRef Name="dlp_id" />
+          </Key>
+          <Property Name="dlp_id" Type="Int32" Nullable="false" />
+          <Property Name="acc_type_id" Type="Int32" Nullable="false" />
+          <Property Name="cur_id" Type="Int32" Nullable="false" />
+          <Property Name="ammount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_daily_profit">
+          <Key>
+            <PropertyRef Name="pro_id" />
+          </Key>
+          <Property Name="pro_id" Type="Int32" Nullable="false" />
+          <Property Name="pro_type_id" Type="Int32" Nullable="false" />
+          <Property Name="rate_id" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <EntityType Name="tbl_profit_type">
           <Key>
             <PropertyRef Name="pro_type_id" />
@@ -107,41 +128,20 @@
         <EntityContainer Name="DailyPaymentEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_account_type" EntityType="Self.tbl_account_type" />
           <EntitySet Name="tbl_currency" EntityType="Self.tbl_currency" />
+          <EntitySet Name="tbl_daily_payment" EntityType="Self.tbl_daily_payment" />
+          <EntitySet Name="tbl_daily_profit" EntityType="Self.tbl_daily_profit" />
           <EntitySet Name="tbl_profit_type" EntityType="Self.tbl_profit_type" />
-          <EntitySet Name="tbl_daily_payment" EntityType="DailyPaymentModel.tbl_daily_payment" />
-          <EntitySet Name="tbl_daily_profit" EntityType="DailyPaymentModel.tbl_daily_profit" />
           <EntitySet Name="tbl_daily_rate" EntityType="DailyPaymentModel.tbl_daily_rate" />
         </EntityContainer>
-        <EntityType Name="tbl_daily_payment">
-          <Key>
-            <PropertyRef Name="dlp_id" />
-          </Key>
-          <Property Name="dlp_id" Type="Int32" Nullable="false" />
-          <Property Name="acc_type_id" Type="Int32" Nullable="false" />
-          <Property Name="cur_id" Type="Int32" Nullable="false" />
-          <Property Name="ammount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="create_date" Type="DateTime" Precision="3" />
-          <Property Name="update_date" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_daily_profit">
-          <Key>
-            <PropertyRef Name="pro_id" />
-          </Key>
-          <Property Name="pro_id" Type="Int32" Nullable="false" />
-          <Property Name="pro_type_id" Type="Int32" Nullable="false" />
-          <Property Name="rate_id" Type="Int32" Nullable="false" />
-          <Property Name="amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
         <EntityType Name="tbl_daily_rate">
           <Key>
             <PropertyRef Name="rate_id" />
           </Key>
-          <Property Name="rate_id" Type="Int32" Nullable="false" />
-          <Property Name="C1_sale_out" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="C1_buy_in" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="C2_sale_out" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="C2_buy_in" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="rate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="b_sale_out" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="b_buy_in" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="s_sale_out" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="s_buy_in" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="update_date" Type="DateTime" Precision="3" />
         </EntityType>
@@ -171,6 +171,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tbl_daily_payment">
+            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_payment">
+              <MappingFragment StoreEntitySet="tbl_daily_payment">
+                <ScalarProperty Name="dlp_id" ColumnName="dlp_id" />
+                <ScalarProperty Name="acc_type_id" ColumnName="acc_type_id" />
+                <ScalarProperty Name="cur_id" ColumnName="cur_id" />
+                <ScalarProperty Name="ammount" ColumnName="ammount" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_daily_profit">
+            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_profit">
+              <MappingFragment StoreEntitySet="tbl_daily_profit">
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+                <ScalarProperty Name="pro_type_id" ColumnName="pro_type_id" />
+                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbl_profit_type">
             <EntityTypeMapping TypeName="DailyPaymentModel.tbl_profit_type">
               <MappingFragment StoreEntitySet="tbl_profit_type">
@@ -181,38 +204,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_daily_payment">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_payment">
-              <MappingFragment StoreEntitySet="tbl_daily_payment">
-                <ScalarProperty Name="update_date" ColumnName="update_date" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="ammount" ColumnName="ammount" />
-                <ScalarProperty Name="cur_id" ColumnName="cur_id" />
-                <ScalarProperty Name="acc_type_id" ColumnName="acc_type_id" />
-                <ScalarProperty Name="dlp_id" ColumnName="dlp_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_daily_profit">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_profit">
-              <MappingFragment StoreEntitySet="tbl_daily_profit">
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
-                <ScalarProperty Name="pro_type_id" ColumnName="pro_type_id" />
-                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbl_daily_rate">
             <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_rate">
               <MappingFragment StoreEntitySet="tbl_daily_rate">
                 <ScalarProperty Name="update_date" ColumnName="update_date" />
                 <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="C2_buy_in" ColumnName="2_buy_in" />
-                <ScalarProperty Name="C2_sale_out" ColumnName="2_sale_out" />
-                <ScalarProperty Name="C1_buy_in" ColumnName="1_buy_in" />
-                <ScalarProperty Name="C1_sale_out" ColumnName="1_sale_out" />
+                <ScalarProperty Name="s_buy_in" ColumnName="s_buy_in" />
+                <ScalarProperty Name="s_sale_out" ColumnName="s_sale_out" />
+                <ScalarProperty Name="b_buy_in" ColumnName="b_buy_in" />
+                <ScalarProperty Name="b_sale_out" ColumnName="b_sale_out" />
                 <ScalarProperty Name="rate_id" ColumnName="rate_id" />
               </MappingFragment>
             </EntityTypeMapping>
