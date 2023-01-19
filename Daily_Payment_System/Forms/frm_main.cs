@@ -1,4 +1,5 @@
-﻿using Daily_Payment_System.Msg;
+﻿using Daily_Payment_System.Forms.Product;
+using Daily_Payment_System.Msg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Daily_Payment_System.Forms
         private frm_exchange_rate exchange_rate;
         private frm_add_rate add_rate;
         private frm_message message;
+        private frm_product_list product_List;
 
         public frm_main()
         {
@@ -49,6 +51,13 @@ namespace Daily_Payment_System.Forms
             add_rate = new frm_add_rate();
             add_rate.MdiParent = this;
             add_rate.Show();
+        }
+
+        private void sub_tsm_product_Click(object sender, EventArgs e)
+        {
+            product_List = new frm_product_list();
+            product_List.MdiParent = this;
+            product_List.Show();
         }
     }
 }

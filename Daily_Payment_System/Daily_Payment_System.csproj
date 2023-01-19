@@ -104,6 +104,12 @@
     <Compile Include="Forms\frm_main.Designer.cs">
       <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Product\frm_product_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product\frm_product_list.Designer.cs">
+      <DependentUpon>frm_product_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="Msg\frm_message.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <EmbeddedResource Include="Config\frm_connection_config.resx">
       <DependentUpon>frm_connection_config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_add_rate.resx">
       <DependentUpon>frm_add_rate.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\frm_product_list.resx">
+      <DependentUpon>frm_product_list.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Msg\frm_message.resx">
       <DependentUpon>frm_message.cs</DependentUpon>
@@ -177,6 +189,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\Stock\" />
+    <Folder Include="Forms\Suplier\" />
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
