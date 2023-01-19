@@ -5,12 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9322694aa0b54e29b10f159a11d8ed41" Name="Diagram1">
-        <EntityTypeShape EntityType="DailyPaymentModel.tbl_account_type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DailyPaymentModel.tbl_currency" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DailyPaymentModel.tbl_daily_payment" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DailyPaymentModel.tbl_daily_profit" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DailyPaymentModel.tbl_profit_type" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DailyPaymentModel.tbl_daily_rate" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DailyPaymentModel.tbl_product" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

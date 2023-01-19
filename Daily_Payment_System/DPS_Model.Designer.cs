@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\DPS_Model.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\deaily_payment_system_c_sharp\Daily_Payment_System\DPS_Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

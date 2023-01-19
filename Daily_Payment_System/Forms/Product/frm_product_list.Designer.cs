@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.col_pro_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_img = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_entry_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -53,6 +53,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1102, 64);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(67, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 32);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ស្វែងរក";
             // 
             // dgvProduct
             // 
@@ -71,14 +87,6 @@
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.Size = new System.Drawing.Size(1102, 489);
             this.dgvProduct.TabIndex = 1;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1102, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // col_pro_id
             // 
@@ -118,35 +126,32 @@
             this.col_entry_date.ReadOnly = true;
             this.col_entry_date.Width = 133;
             // 
-            // label1
+            // statusStrip1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ស្វែងរក";
+            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1102, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // textBox1
+            // btnAdd
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 32);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(991, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "បន្ថែមថ្មី";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::Daily_Payment_System.Properties.Resources.new_copy_24px;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(991, 10);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAdd.Size = new System.Drawing.Size(99, 38);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "បន្ថែមថ្មី";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frm_product_list
             // 
@@ -183,6 +188,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_entry_date;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

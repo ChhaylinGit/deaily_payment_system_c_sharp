@@ -5,145 +5,35 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DailyPaymentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="tbl_account_type">
-          <Key>
-            <PropertyRef Name="acc_type_id" />
-          </Key>
-          <Property Name="acc_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="acc_type" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="status" Type="bit" Nullable="false" />
-          <Property Name="create_date" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbl_currency">
-          <Key>
-            <PropertyRef Name="cur_id" />
-          </Key>
-          <Property Name="cur_id" Type="int" Nullable="false" />
-          <Property Name="currency" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="status" Type="bit" Nullable="false" />
-          <Property Name="create_date" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbl_daily_payment">
-          <Key>
-            <PropertyRef Name="dlp_id" />
-          </Key>
-          <Property Name="dlp_id" Type="int" Nullable="false" />
-          <Property Name="acc_type_id" Type="int" Nullable="false" />
-          <Property Name="cur_id" Type="int" Nullable="false" />
-          <Property Name="ammount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="create_date" Type="datetime" />
-          <Property Name="update_date" Type="datetime" />
-        </EntityType>
-        <EntityType Name="tbl_daily_profit">
+        <EntityType Name="tbl_product">
           <Key>
             <PropertyRef Name="pro_id" />
           </Key>
-          <Property Name="pro_id" Type="int" Nullable="false" />
-          <Property Name="pro_type_id" Type="int" Nullable="false" />
-          <Property Name="rate_id" Type="int" Nullable="false" />
-          <Property Name="amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="create_date" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbl_daily_rate">
-          <Key>
-            <PropertyRef Name="rate_id" />
-          </Key>
-          <Property Name="rate_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="b_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="b_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="s_sale_out" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="s_buy_in" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="create_date" Type="datetime" Nullable="false" />
-          <Property Name="update_date" Type="datetime" />
-        </EntityType>
-        <EntityType Name="tbl_profit_type">
-          <Key>
-            <PropertyRef Name="pro_type_id" />
-          </Key>
-          <Property Name="pro_type_id" Type="int" Nullable="false" />
-          <Property Name="pro_type" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="create_date" Type="datetime" Nullable="false" />
-          <Property Name="update_date" Type="datetime" />
+          <Property Name="pro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pro_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="image" Type="binary" MaxLength="50" />
+          <Property Name="entry_date" Type="datetime" Nullable="false" />
+          <Property Name="edit_date" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityContainer Name="DailyPaymentModelStoreContainer">
-          <EntitySet Name="tbl_account_type" EntityType="Self.tbl_account_type" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_currency" EntityType="Self.tbl_currency" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_daily_payment" EntityType="Self.tbl_daily_payment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_daily_profit" EntityType="Self.tbl_daily_profit" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_daily_rate" EntityType="Self.tbl_daily_rate" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_profit_type" EntityType="Self.tbl_profit_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DailyPaymentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="tbl_account_type">
-          <Key>
-            <PropertyRef Name="acc_type_id" />
-          </Key>
-          <Property Name="acc_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="acc_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="status" Type="Boolean" Nullable="false" />
-          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_currency">
-          <Key>
-            <PropertyRef Name="cur_id" />
-          </Key>
-          <Property Name="cur_id" Type="Int32" Nullable="false" />
-          <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="status" Type="Boolean" Nullable="false" />
-          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_daily_payment">
-          <Key>
-            <PropertyRef Name="dlp_id" />
-          </Key>
-          <Property Name="dlp_id" Type="Int32" Nullable="false" />
-          <Property Name="acc_type_id" Type="Int32" Nullable="false" />
-          <Property Name="cur_id" Type="Int32" Nullable="false" />
-          <Property Name="ammount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="create_date" Type="DateTime" Precision="3" />
-          <Property Name="update_date" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_daily_profit">
+        <EntityContainer Name="DailyPaymentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_product" EntityType="DailyPaymentModel.tbl_product" />
+        </EntityContainer>
+        <EntityType Name="tbl_product">
           <Key>
             <PropertyRef Name="pro_id" />
           </Key>
-          <Property Name="pro_id" Type="Int32" Nullable="false" />
-          <Property Name="pro_type_id" Type="Int32" Nullable="false" />
-          <Property Name="rate_id" Type="Int32" Nullable="false" />
-          <Property Name="amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_profit_type">
-          <Key>
-            <PropertyRef Name="pro_type_id" />
-          </Key>
-          <Property Name="pro_type_id" Type="Int32" Nullable="false" />
-          <Property Name="pro_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="update_date" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityContainer Name="DailyPaymentEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tbl_account_type" EntityType="Self.tbl_account_type" />
-          <EntitySet Name="tbl_currency" EntityType="Self.tbl_currency" />
-          <EntitySet Name="tbl_daily_payment" EntityType="Self.tbl_daily_payment" />
-          <EntitySet Name="tbl_daily_profit" EntityType="Self.tbl_daily_profit" />
-          <EntitySet Name="tbl_profit_type" EntityType="Self.tbl_profit_type" />
-          <EntitySet Name="tbl_daily_rate" EntityType="DailyPaymentModel.tbl_daily_rate" />
-        </EntityContainer>
-        <EntityType Name="tbl_daily_rate">
-          <Key>
-            <PropertyRef Name="rate_id" />
-          </Key>
-          <Property Name="rate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="b_sale_out" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="b_buy_in" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="s_sale_out" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="s_buy_in" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="pro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pro_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="50" FixedLength="true" />
+          <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="edit_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -151,69 +41,14 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DailyPaymentModelStoreContainer" CdmEntityContainer="DailyPaymentEntities">
-          <EntitySetMapping Name="tbl_account_type">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_account_type">
-              <MappingFragment StoreEntitySet="tbl_account_type">
-                <ScalarProperty Name="acc_type_id" ColumnName="acc_type_id" />
-                <ScalarProperty Name="acc_type" ColumnName="acc_type" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_currency">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_currency">
-              <MappingFragment StoreEntitySet="tbl_currency">
-                <ScalarProperty Name="cur_id" ColumnName="cur_id" />
-                <ScalarProperty Name="currency" ColumnName="currency" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_daily_payment">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_payment">
-              <MappingFragment StoreEntitySet="tbl_daily_payment">
-                <ScalarProperty Name="dlp_id" ColumnName="dlp_id" />
-                <ScalarProperty Name="acc_type_id" ColumnName="acc_type_id" />
-                <ScalarProperty Name="cur_id" ColumnName="cur_id" />
-                <ScalarProperty Name="ammount" ColumnName="ammount" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="update_date" ColumnName="update_date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_daily_profit">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_profit">
-              <MappingFragment StoreEntitySet="tbl_daily_profit">
+          <EntitySetMapping Name="tbl_product">
+            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_product">
+              <MappingFragment StoreEntitySet="tbl_product">
+                <ScalarProperty Name="edit_date" ColumnName="edit_date" />
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="pro_name" ColumnName="pro_name" />
                 <ScalarProperty Name="pro_id" ColumnName="pro_id" />
-                <ScalarProperty Name="pro_type_id" ColumnName="pro_type_id" />
-                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_profit_type">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_profit_type">
-              <MappingFragment StoreEntitySet="tbl_profit_type">
-                <ScalarProperty Name="pro_type_id" ColumnName="pro_type_id" />
-                <ScalarProperty Name="pro_type" ColumnName="pro_type" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="update_date" ColumnName="update_date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_daily_rate">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_daily_rate">
-              <MappingFragment StoreEntitySet="tbl_daily_rate">
-                <ScalarProperty Name="update_date" ColumnName="update_date" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="s_buy_in" ColumnName="s_buy_in" />
-                <ScalarProperty Name="s_sale_out" ColumnName="s_sale_out" />
-                <ScalarProperty Name="b_buy_in" ColumnName="b_buy_in" />
-                <ScalarProperty Name="b_sale_out" ColumnName="b_sale_out" />
-                <ScalarProperty Name="rate_id" ColumnName="rate_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

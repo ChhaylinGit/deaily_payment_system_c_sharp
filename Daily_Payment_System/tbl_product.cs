@@ -12,11 +12,12 @@ namespace Daily_Payment_System
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_account_type
+    public partial class tbl_product
     {
-        public int acc_type_id { get; set; }
-        public string acc_type { get; set; }
-        public bool status { get; set; }
-        public System.DateTime create_date { get; set; }
+        public int pro_id { get; set; }
+        public string pro_name { get; set; }
+        public byte[] image { get; set; }
+        public System.DateTime entry_date { get; set; }
+        public string edit_date { get; set; }
     }
 }

@@ -22,5 +22,13 @@ namespace Daily_Payment_System.Forms.Product
         {
             Setting.dataGridViewStyle(dgvProduct);
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frm_add_product add_product = new frm_add_product();
+            add_product.MdiParent = this;
+            add_product.Show();
+            add_product.Focus();
+        }
     }
 }
