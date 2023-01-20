@@ -5,35 +5,104 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DailyPaymentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="cat_id" />
+          </Key>
+          <Property Name="cat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="entry_date" Type="datetime" Nullable="false" />
+          <Property Name="edit_date" Type="datetime" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="tbl_product">
           <Key>
             <PropertyRef Name="pro_id" />
           </Key>
           <Property Name="pro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="pro_name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="image" Type="binary" MaxLength="50" />
+          <Property Name="cat_id" Type="int" Nullable="false" />
+          <Property Name="image" Type="varbinary(max)" />
           <Property Name="entry_date" Type="datetime" Nullable="false" />
-          <Property Name="edit_date" Type="nchar" MaxLength="10" />
+          <Property Name="edit_date" Type="datetime" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DailyPayment.dbo.vw_select_product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_select_product">
+          <Key>
+            <PropertyRef Name="pro_id" />
+            <PropertyRef Name="pro_name" />
+            <PropertyRef Name="cat_id" />
+            <PropertyRef Name="category" />
+            <PropertyRef Name="entry_date" />
+          </Key>
+          <Property Name="pro_id" Type="int" Nullable="false" />
+          <Property Name="pro_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cat_id" Type="int" Nullable="false" />
+          <Property Name="category" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="image" Type="varbinary(max)" />
+          <Property Name="entry_date" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="DailyPaymentModelStoreContainer">
+          <EntitySet Name="tbl_category" EntityType="Self.tbl_category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_select_product" EntityType="Self.vw_select_product" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_select_product].[pro_id] AS [pro_id], 
+    [vw_select_product].[pro_name] AS [pro_name], 
+    [vw_select_product].[cat_id] AS [cat_id], 
+    [vw_select_product].[category] AS [category], 
+    [vw_select_product].[image] AS [image], 
+    [vw_select_product].[entry_date] AS [entry_date]
+    FROM [dbo].[vw_select_product] AS [vw_select_product]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DailyPaymentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DailyPaymentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_category" EntityType="DailyPaymentModel.tbl_category" />
           <EntitySet Name="tbl_product" EntityType="DailyPaymentModel.tbl_product" />
+          <EntitySet Name="vw_select_product" EntityType="DailyPaymentModel.vw_select_product" />
         </EntityContainer>
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="cat_id" />
+          </Key>
+          <Property Name="cat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="edit_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+        </EntityType>
         <EntityType Name="tbl_product">
           <Key>
             <PropertyRef Name="pro_id" />
           </Key>
           <Property Name="pro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="pro_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="image" Type="Binary" MaxLength="50" FixedLength="true" />
+          <Property Name="cat_id" Type="Int32" Nullable="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="edit_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="edit_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_select_product">
+          <Key>
+            <PropertyRef Name="pro_id" />
+            <PropertyRef Name="pro_name" />
+            <PropertyRef Name="cat_id" />
+            <PropertyRef Name="category" />
+            <PropertyRef Name="entry_date" />
+          </Key>
+          <Property Name="pro_id" Type="Int32" Nullable="false" />
+          <Property Name="pro_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cat_id" Type="Int32" Nullable="false" />
+          <Property Name="category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -41,12 +110,37 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DailyPaymentModelStoreContainer" CdmEntityContainer="DailyPaymentEntities">
+          <EntitySetMapping Name="tbl_category">
+            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_category">
+              <MappingFragment StoreEntitySet="tbl_category">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="edit_date" ColumnName="edit_date" />
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbl_product">
             <EntityTypeMapping TypeName="DailyPaymentModel.tbl_product">
               <MappingFragment StoreEntitySet="tbl_product">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="edit_date" ColumnName="edit_date" />
                 <ScalarProperty Name="entry_date" ColumnName="entry_date" />
                 <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="pro_name" ColumnName="pro_name" />
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_select_product">
+            <EntityTypeMapping TypeName="DailyPaymentModel.vw_select_product">
+              <MappingFragment StoreEntitySet="vw_select_product">
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
                 <ScalarProperty Name="pro_name" ColumnName="pro_name" />
                 <ScalarProperty Name="pro_id" ColumnName="pro_id" />
               </MappingFragment>

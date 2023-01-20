@@ -12,14 +12,13 @@ namespace Daily_Payment_System
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_product
+    public partial class vw_select_product
     {
         public int pro_id { get; set; }
         public string pro_name { get; set; }
         public int cat_id { get; set; }
+        public string category { get; set; }
         public byte[] image { get; set; }
         public System.DateTime entry_date { get; set; }
-        public Nullable<System.DateTime> edit_date { get; set; }
-        public bool status { get; set; }
     }
 }

@@ -34,12 +34,13 @@
             this.ចកចញToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_exchange_rate = new System.Windows.Forms.ToolStripMenuItem();
             this.ករកណតToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_printer = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_product = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tsm_printer = new System.Windows.Forms.ToolStripMenuItem();
-            this.sub_tsm_product = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_change_database = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -62,30 +63,46 @@
             // fileMenu
             // 
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ចកចញToolStripMenuItem});
+            this.ចកចញToolStripMenuItem,
+            this.sub_tsm_change_database});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(50, 26);
+            this.fileMenu.Size = new System.Drawing.Size(54, 28);
             this.fileMenu.Text = "ហ្វាល់";
             // 
             // ចកចញToolStripMenuItem
             // 
             this.ចកចញToolStripMenuItem.Name = "ចកចញToolStripMenuItem";
-            this.ចកចញToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
+            this.ចកចញToolStripMenuItem.Size = new System.Drawing.Size(215, 28);
             this.ចកចញToolStripMenuItem.Text = "ចាកចេញ";
             // 
             // tsm_exchange_rate
             // 
             this.tsm_exchange_rate.Name = "tsm_exchange_rate";
-            this.tsm_exchange_rate.Size = new System.Drawing.Size(82, 26);
+            this.tsm_exchange_rate.Size = new System.Drawing.Size(87, 28);
             this.tsm_exchange_rate.Text = "អត្រាប្តូរប្រាក់";
             this.tsm_exchange_rate.Click += new System.EventHandler(this.tsm_exchange_rate_Click);
             // 
             // ករកណតToolStripMenuItem
             // 
             this.ករកណតToolStripMenuItem.Name = "ករកណតToolStripMenuItem";
-            this.ករកណតToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
+            this.ករកណតToolStripMenuItem.Size = new System.Drawing.Size(75, 28);
             this.ករកណតToolStripMenuItem.Text = "ការកំណត់";
+            // 
+            // tsm_printer
+            // 
+            this.tsm_printer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sub_tsm_product});
+            this.tsm_printer.Name = "tsm_printer";
+            this.tsm_printer.Size = new System.Drawing.Size(79, 28);
+            this.tsm_printer.Text = "សម្ភារៈព្រីន";
+            // 
+            // sub_tsm_product
+            // 
+            this.sub_tsm_product.Name = "sub_tsm_product";
+            this.sub_tsm_product.Size = new System.Drawing.Size(148, 28);
+            this.sub_tsm_product.Text = "ទំនិញផ្សេងៗ";
+            this.sub_tsm_product.Click += new System.EventHandler(this.sub_tsm_product_Click);
             // 
             // toolStrip
             // 
@@ -113,20 +130,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // tsm_printer
+            // sub_tsm_change_database
             // 
-            this.tsm_printer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sub_tsm_product});
-            this.tsm_printer.Name = "tsm_printer";
-            this.tsm_printer.Size = new System.Drawing.Size(75, 26);
-            this.tsm_printer.Text = "សម្ភារៈព្រីន";
-            // 
-            // sub_tsm_product
-            // 
-            this.sub_tsm_product.Name = "sub_tsm_product";
-            this.sub_tsm_product.Size = new System.Drawing.Size(180, 26);
-            this.sub_tsm_product.Text = "ទំនិញផ្សេងៗ";
-            this.sub_tsm_product.Click += new System.EventHandler(this.sub_tsm_product_Click);
+            this.sub_tsm_change_database.Name = "sub_tsm_change_database";
+            this.sub_tsm_change_database.Size = new System.Drawing.Size(215, 28);
+            this.sub_tsm_change_database.Text = "ប្តូរDatabase Connection";
+            this.sub_tsm_change_database.Click += new System.EventHandler(this.sub_tsm_change_database_Click);
             // 
             // frm_main
             // 
@@ -166,6 +175,7 @@
         private System.Windows.Forms.ToolStripMenuItem ចកចញToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsm_printer;
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_product;
+        private System.Windows.Forms.ToolStripMenuItem sub_tsm_change_database;
     }
 }
 

@@ -19,6 +19,8 @@ namespace Daily_Payment_System.Class
         public const string TITLE_MSG_ERROR = "Error";
         public const string TITLE_MSG_QUESTION = "Question";
 
+        public const string TEXT_MSG_INFO = "ប្រតិបត្តការណ៍ទទួលបានជោគជ័យ!";
+
         public static Image ICON_MSG_INFO = Properties.Resources.infor;
         public static Image ICON_MSG_WARNINIG = Properties.Resources.warning;
         public static Image ICON_MSG_ERROR = Properties.Resources.error;

@@ -1,4 +1,5 @@
-﻿using Daily_Payment_System.Forms.Product;
+﻿using Daily_Payment_System.Config;
+using Daily_Payment_System.Forms.Product;
 using Daily_Payment_System.Msg;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace Daily_Payment_System.Forms
         private frm_add_rate add_rate;
         private frm_message message;
         private frm_product_list product_List;
+        private frm_add_product add_product;
+        private frm_connection_config frm_connection;
 
         public frm_main()
         {
@@ -57,7 +60,23 @@ namespace Daily_Payment_System.Forms
         {
             product_List = new frm_product_list();
             product_List.MdiParent = this;
+            product_List.NotifyMainFormToOpenChildForm2 += NotifyMainFormToOpenForm2;
+           
             product_List.Show();
+        }
+
+        private void NotifyMainFormToOpenForm2()
+        {
+            add_product = new frm_add_product();
+            add_product.MdiParent = this;
+            add_product.Show();
+        }
+
+        private void sub_tsm_change_database_Click(object sender, EventArgs e)
+        {
+            frm_connection = new frm_connection_config();
+            frm_connection.MdiParent = this;
+            frm_connection.Show();
         }
     }
 }
