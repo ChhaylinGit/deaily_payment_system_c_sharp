@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.col_lr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +44,9 @@
             this.col_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_entry_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_img = new System.Windows.Forms.DataGridViewImageColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +61,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1102, 64);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::Daily_Payment_System.Properties.Resources.new_copy_24px;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(991, 10);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAdd.Size = new System.Drawing.Size(99, 38);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "បន្ថែមថ្មី";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // textBox1
             // 
@@ -100,6 +120,77 @@
             this.dgvProduct.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellMouseEnter);
             this.dgvProduct.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvProduct_RowsAdded);
             // 
+            // col_lr
+            // 
+            this.col_lr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_lr.DefaultCellStyle = dataGridViewCellStyle5;
+            this.col_lr.HeaderText = "ល.រ";
+            this.col_lr.Name = "col_lr";
+            this.col_lr.ReadOnly = true;
+            this.col_lr.Width = 57;
+            // 
+            // col_pro_id
+            // 
+            this.col_pro_id.DataPropertyName = "pro_id";
+            this.col_pro_id.HeaderText = "pro_id";
+            this.col_pro_id.Name = "col_pro_id";
+            this.col_pro_id.ReadOnly = true;
+            this.col_pro_id.Visible = false;
+            // 
+            // col_pro_name
+            // 
+            this.col_pro_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_pro_name.DataPropertyName = "pro_name";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_pro_name.DefaultCellStyle = dataGridViewCellStyle6;
+            this.col_pro_name.HeaderText = "ឈ្មោះទំនិញ";
+            this.col_pro_name.Name = "col_pro_name";
+            this.col_pro_name.ReadOnly = true;
+            this.col_pro_name.Width = 99;
+            // 
+            // col_cat_id
+            // 
+            this.col_cat_id.DataPropertyName = "cat_id";
+            this.col_cat_id.HeaderText = "cat_id";
+            this.col_cat_id.Name = "col_cat_id";
+            this.col_cat_id.ReadOnly = true;
+            this.col_cat_id.Visible = false;
+            // 
+            // col_category
+            // 
+            this.col_category.DataPropertyName = "category";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_category.DefaultCellStyle = dataGridViewCellStyle7;
+            this.col_category.HeaderText = "ប្រភេទទំនិញ";
+            this.col_category.Name = "col_category";
+            this.col_category.ReadOnly = true;
+            // 
+            // col_entry_date
+            // 
+            this.col_entry_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_entry_date.DataPropertyName = "entry_date";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "dd/MM/yyyy";
+            this.col_entry_date.DefaultCellStyle = dataGridViewCellStyle8;
+            this.col_entry_date.HeaderText = "កាលបរិច្ឆេទបញ្ចូល";
+            this.col_entry_date.Name = "col_entry_date";
+            this.col_entry_date.ReadOnly = true;
+            this.col_entry_date.Width = 133;
+            // 
+            // col_img
+            // 
+            this.col_img.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_img.DataPropertyName = "image";
+            this.col_img.HeaderText = "រូបភាព";
+            this.col_img.Image = global::Daily_Payment_System.Properties.Resources.no_image;
+            this.col_img.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.col_img.Name = "col_img";
+            this.col_img.ReadOnly = true;
+            this.col_img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_img.Width = 70;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 531);
@@ -118,97 +209,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn1.Width = 67;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::Daily_Payment_System.Properties.Resources.new_copy_24px;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(991, 10);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdd.Size = new System.Drawing.Size(99, 38);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "បន្ថែមថ្មី";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // col_lr
-            // 
-            this.col_lr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_lr.DefaultCellStyle = dataGridViewCellStyle9;
-            this.col_lr.HeaderText = "ល.រ";
-            this.col_lr.Name = "col_lr";
-            this.col_lr.ReadOnly = true;
-            this.col_lr.Width = 57;
-            // 
-            // col_pro_id
-            // 
-            this.col_pro_id.DataPropertyName = "pro_id";
-            this.col_pro_id.HeaderText = "pro_id";
-            this.col_pro_id.Name = "col_pro_id";
-            this.col_pro_id.ReadOnly = true;
-            this.col_pro_id.Visible = false;
-            // 
-            // col_pro_name
-            // 
-            this.col_pro_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_pro_name.DataPropertyName = "pro_name";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_pro_name.DefaultCellStyle = dataGridViewCellStyle10;
-            this.col_pro_name.HeaderText = "ឈ្មោះទំនិញ";
-            this.col_pro_name.Name = "col_pro_name";
-            this.col_pro_name.ReadOnly = true;
-            this.col_pro_name.Width = 99;
-            // 
-            // col_cat_id
-            // 
-            this.col_cat_id.DataPropertyName = "cat_id";
-            this.col_cat_id.HeaderText = "cat_id";
-            this.col_cat_id.Name = "col_cat_id";
-            this.col_cat_id.ReadOnly = true;
-            this.col_cat_id.Visible = false;
-            // 
-            // col_category
-            // 
-            this.col_category.DataPropertyName = "category";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_category.DefaultCellStyle = dataGridViewCellStyle11;
-            this.col_category.HeaderText = "ប្រភេទទំនិញ";
-            this.col_category.Name = "col_category";
-            this.col_category.ReadOnly = true;
-            // 
-            // col_entry_date
-            // 
-            this.col_entry_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_entry_date.DataPropertyName = "entry_date";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "dd/MM/yyyy";
-            this.col_entry_date.DefaultCellStyle = dataGridViewCellStyle12;
-            this.col_entry_date.HeaderText = "កាលបរិច្ឆេទបញ្ចូល";
-            this.col_entry_date.Name = "col_entry_date";
-            this.col_entry_date.ReadOnly = true;
-            this.col_entry_date.Width = 133;
-            // 
-            // col_img
-            // 
-            this.col_img.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_img.DataPropertyName = "image";
-            this.col_img.HeaderText = "រូបភាព";
-            this.col_img.Image = global::Daily_Payment_System.Properties.Resources.no_image;
-            this.col_img.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.col_img.Name = "col_img";
-            this.col_img.ReadOnly = true;
-            this.col_img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_img.Width = 70;
             // 
             // frm_product_list
             // 
@@ -249,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_category;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_entry_date;
         private System.Windows.Forms.DataGridViewImageColumn col_img;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -25,7 +25,7 @@ namespace Daily_Payment_System.Forms.Product
         {
             Setting.dataGridViewStyle(dgvProduct);
             dgvProduct.DataSource = Utils.GetProducts();
-            this.dgvProduct.Columns["col_img"].DefaultCellStyle.NullValue = Properties.Resources.no_image; ;
+            this.dgvProduct.Columns["col_img"].DefaultCellStyle.NullValue = Properties.Resources.no_image;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

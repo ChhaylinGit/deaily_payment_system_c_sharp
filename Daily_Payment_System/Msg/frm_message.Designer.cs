@@ -46,10 +46,10 @@
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 135);
+            this.panel1.Location = new System.Drawing.Point(0, 154);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.panel1.Size = new System.Drawing.Size(415, 49);
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 6, 5);
+            this.panel1.Size = new System.Drawing.Size(421, 53);
             this.panel1.TabIndex = 0;
             // 
             // btnOK
@@ -57,9 +57,9 @@
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOK.Location = new System.Drawing.Point(260, 5);
+            this.btnOK.Location = new System.Drawing.Point(243, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 39);
+            this.btnOK.Size = new System.Drawing.Size(86, 43);
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "យល់ព្រម";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Location = new System.Drawing.Point(335, 5);
+            this.btnExit.Location = new System.Drawing.Point(329, 5);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 39);
+            this.btnExit.Size = new System.Drawing.Size(86, 43);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "ចាកចេញ";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -87,14 +87,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(415, 47);
+            this.panel2.Size = new System.Drawing.Size(421, 51);
             this.panel2.TabIndex = 1;
             // 
             // lblMessageTitle
             // 
             this.lblMessageTitle.AutoSize = true;
             this.lblMessageTitle.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageTitle.Location = new System.Drawing.Point(55, 17);
+            this.lblMessageTitle.Location = new System.Drawing.Point(63, 19);
             this.lblMessageTitle.Name = "lblMessageTitle";
             this.lblMessageTitle.Size = new System.Drawing.Size(46, 15);
             this.lblMessageTitle.TabIndex = 3;
@@ -103,9 +103,9 @@
             // picIcon
             // 
             this.picIcon.Image = global::Daily_Payment_System.Properties.Resources.question;
-            this.picIcon.Location = new System.Drawing.Point(12, 3);
+            this.picIcon.Location = new System.Drawing.Point(14, 3);
             this.picIcon.Name = "picIcon";
-            this.picIcon.Size = new System.Drawing.Size(40, 40);
+            this.picIcon.Size = new System.Drawing.Size(46, 44);
             this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIcon.TabIndex = 0;
             this.picIcon.TabStop = false;
@@ -113,24 +113,24 @@
             // lblMessageContent
             // 
             this.lblMessageContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMessageContent.Location = new System.Drawing.Point(0, 47);
+            this.lblMessageContent.Location = new System.Drawing.Point(0, 51);
             this.lblMessageContent.Name = "lblMessageContent";
-            this.lblMessageContent.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.lblMessageContent.Size = new System.Drawing.Size(415, 88);
+            this.lblMessageContent.Padding = new System.Windows.Forms.Padding(23, 0, 0, 0);
+            this.lblMessageContent.Size = new System.Drawing.Size(421, 103);
             this.lblMessageContent.TabIndex = 2;
             this.lblMessageContent.Text = "តើលោកអ្នកពិតជាចង់ចាកចេញមែនឬទេ?";
             this.lblMessageContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frm_message
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(415, 184);
+            this.ClientSize = new System.Drawing.Size(421, 207);
             this.Controls.Add(this.lblMessageContent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Khmer OS Battambang", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

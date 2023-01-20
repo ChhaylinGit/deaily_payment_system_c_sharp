@@ -71,11 +71,13 @@
             // cboCategory
             // 
             this.cboCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(90, 23);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(259, 32);
             this.cboCategory.TabIndex = 5;
+            this.cboCategory.SelectionChangeCommitted += new System.EventHandler(this.cboCategory_SelectionChangeCommitted);
             // 
             // label2
             // 
@@ -138,7 +140,7 @@
             this.picProduct.Location = new System.Drawing.Point(368, 23);
             this.picProduct.Name = "picProduct";
             this.picProduct.Size = new System.Drawing.Size(120, 114);
-            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProduct.TabIndex = 3;
             this.picProduct.TabStop = false;
             // 
@@ -209,7 +211,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Khmer OS Content", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_add_product";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
