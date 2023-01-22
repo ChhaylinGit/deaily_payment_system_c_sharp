@@ -61,7 +61,7 @@ namespace Daily_Payment_System.Forms
             product_List = new frm_product_list();
             product_List.MdiParent = this;
             product_List.NotifyMainFormToOpenChildForm2 += NotifyMainFormToOpenForm2;
-           
+            product_List.TransfEvent += TransfEvent;
             product_List.Show();
         }
 
@@ -71,6 +71,14 @@ namespace Daily_Payment_System.Forms
             add_product.MdiParent = this;
             add_product.Show();
         }
+
+        private void TransfEvent(vw_select_product product)
+        {
+            add_product = new frm_add_product(product);
+            add_product.MdiParent = this;
+            add_product.Show();
+        }
+
 
         private void sub_tsm_change_database_Click(object sender, EventArgs e)
         {

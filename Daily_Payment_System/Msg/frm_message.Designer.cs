@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMessageTitle = new System.Windows.Forms.Label();
-            this.picIcon = new System.Windows.Forms.PictureBox();
             this.lblMessageContent = new System.Windows.Forms.Label();
+            this.picIcon = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -51,33 +51,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 6, 5);
             this.panel1.Size = new System.Drawing.Size(421, 53);
             this.panel1.TabIndex = 0;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOK.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOK.Location = new System.Drawing.Point(243, 5);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(86, 43);
-            this.btnOK.TabIndex = 0;
-            this.btnOK.Text = "យល់ព្រម";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Location = new System.Drawing.Point(329, 5);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(86, 43);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "ចាកចេញ";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Visible = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel2
             // 
@@ -100,16 +73,6 @@
             this.lblMessageTitle.TabIndex = 3;
             this.lblMessageTitle.Text = "Warning";
             // 
-            // picIcon
-            // 
-            this.picIcon.Image = global::Daily_Payment_System.Properties.Resources.question;
-            this.picIcon.Location = new System.Drawing.Point(14, 3);
-            this.picIcon.Name = "picIcon";
-            this.picIcon.Size = new System.Drawing.Size(46, 44);
-            this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIcon.TabIndex = 0;
-            this.picIcon.TabStop = false;
-            // 
             // lblMessageContent
             // 
             this.lblMessageContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -120,6 +83,43 @@
             this.lblMessageContent.TabIndex = 2;
             this.lblMessageContent.Text = "តើលោកអ្នកពិតជាចង់ចាកចេញមែនឬទេ?";
             this.lblMessageContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picIcon
+            // 
+            this.picIcon.Image = global::Daily_Payment_System.Properties.Resources.question;
+            this.picIcon.Location = new System.Drawing.Point(14, 3);
+            this.picIcon.Name = "picIcon";
+            this.picIcon.Size = new System.Drawing.Size(46, 44);
+            this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picIcon.TabIndex = 0;
+            this.picIcon.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Location = new System.Drawing.Point(329, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(86, 43);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "ចាកចេញ";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Visible = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnOK
+            // 
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOK.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOK.Location = new System.Drawing.Point(243, 5);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(86, 43);
+            this.btnOK.TabIndex = 0;
+            this.btnOK.Text = "យល់ព្រម";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // frm_message
             // 
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Label lblMessageContent;
         private System.Windows.Forms.Label lblMessageTitle;
         private System.Windows.Forms.PictureBox picIcon;
-        public System.Windows.Forms.Button btnExit;
         public System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.Button btnExit;
     }
 }

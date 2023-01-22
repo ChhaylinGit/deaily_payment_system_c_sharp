@@ -224,6 +224,7 @@
       <DependentUpon>DPS_Model.edmx</DependentUpon>
       <LastGenOutput>DPS_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ok_24px.png" />
     <None Include="Resources\no_image.png" />
     <None Include="Resources\trash_24px.png" />
     <None Include="Resources\new_copy_24px.png" />

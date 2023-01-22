@@ -20,6 +20,8 @@ namespace Daily_Payment_System.Forms.Product
         frm_view_product_image frm_View_Product;
 
         public Action NotifyMainFormToOpenChildForm2;
+        public delegate void TransfDelegate(vw_select_product product);
+        public event TransfDelegate TransfEvent;
 
         private void frm_product_list_Load(object sender, EventArgs e)
         {
@@ -35,6 +37,8 @@ namespace Daily_Payment_System.Forms.Product
                 NotifyMainFormToOpenChildForm2();
             }
         }
+
+       
 
         private void dgvProduct_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -52,6 +56,14 @@ namespace Daily_Payment_System.Forms.Product
                     string proName = dgvProduct.Rows[e.RowIndex].Cells["col_pro_name"].Value.ToString();
                     frm_View_Product = new frm_view_product_image(bytes, proName);
                     frm_View_Product.Show();
+                }else if (e.ColumnIndex == dgvProduct.Columns["col_edit"].Index)
+                {
+                    var product = new vw_select_product
+                    {
+                        cat_id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["col_cat_id"].Value),
+                        pro_name = dgvProduct.Rows[e.RowIndex].Cells["col_pro_name"].Value.ToString()
+                    };
+                    TransfEvent(product);
                 }
             }
         }

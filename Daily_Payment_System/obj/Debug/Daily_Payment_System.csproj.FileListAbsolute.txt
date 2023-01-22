@@ -108,3 +108,4 @@ F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.exe
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.pdb
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_view_product_image.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_view_product_image.resources

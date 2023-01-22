@@ -147,6 +147,7 @@
             // btnLeft
             // 
             this.btnLeft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLeft.Enabled = false;
             this.btnLeft.Font = new System.Drawing.Font("Khmer OS Content", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeft.Location = new System.Drawing.Point(494, 22);
             this.btnLeft.Name = "btnLeft";
@@ -159,6 +160,7 @@
             // btnRight
             // 
             this.btnRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRight.Enabled = false;
             this.btnRight.Font = new System.Drawing.Font("Khmer OS Content", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRight.Location = new System.Drawing.Point(494, 57);
             this.btnRight.Name = "btnRight";
@@ -171,6 +173,7 @@
             // btnTop
             // 
             this.btnTop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTop.Enabled = false;
             this.btnTop.Font = new System.Drawing.Font("Khmer OS Content", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTop.Location = new System.Drawing.Point(494, 92);
             this.btnTop.Name = "btnTop";
@@ -183,6 +186,7 @@
             // btnBottom
             // 
             this.btnBottom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBottom.Enabled = false;
             this.btnBottom.Font = new System.Drawing.Font("Khmer OS Content", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBottom.Location = new System.Drawing.Point(494, 127);
             this.btnBottom.Name = "btnBottom";
@@ -211,7 +215,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Khmer OS Content", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

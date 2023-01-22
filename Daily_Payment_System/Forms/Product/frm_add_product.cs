@@ -18,16 +18,28 @@ namespace Daily_Payment_System.Forms.Product
         private string imagePath = "";
         private Bitmap image = null;
         private float angle = 90.0f;
+        public vw_select_product product = new vw_select_product();
+
+       
 
         public frm_add_product()
         {
             InitializeComponent();
         }
-
+        public frm_add_product(vw_select_product product)
+        {
+            InitializeComponent();
+            this.product = product;
+        }
 
         private void frm_add_product_Load(object sender, EventArgs e)
         {
             Utils.loadCategory(cboCategory,false);
+            if(product != null)
+            {
+                cboCategory.SelectedValue = product.cat_id;
+                txtProduct.Text = product.pro_name;
+            }
         }
 
         private void RotateImage(PictureBox pb, Image img, float angle)
@@ -66,7 +78,7 @@ namespace Daily_Payment_System.Forms.Product
                     lblLoadImage.Text = KH.DELETE;
                     lblLoadImage.LinkColor = Color.Red;
                     lblLoadImage.Tag = 1;
-                  
+                    btnLeft.Enabled = btnRight.Enabled = btnTop.Enabled = btnBottom.Enabled = true;
                 }
             }
             else
@@ -75,6 +87,7 @@ namespace Daily_Payment_System.Forms.Product
                 lblLoadImage.Text = KH.BROWSE_IMAGE;
                 lblLoadImage.LinkColor = Color.Blue;
                 lblLoadImage.Tag = 0;
+                btnLeft.Enabled = btnRight.Enabled = btnTop.Enabled = btnBottom.Enabled = false;
             }
         }
 
@@ -99,11 +112,22 @@ namespace Daily_Payment_System.Forms.Product
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!empty())
+            {
+                if (MsgBox.showQuestion(ConstantField.TEXT_MSG_ASK_FOR_INSERT))
+                {
+                    save();
+                    reset();
+                    frm_product_list obj = (frm_product_list)Application.OpenForms["frm_product_list"];
+                    obj.dgvProduct.DataSource = Utils.GetProducts();
+                }
+            }
+        }
+
+        private void save()
+        {
             try
             {
-                if (!empty())
-                {
-                    byte[] b = imageToByteArray(image);
                     tbl_product product = new tbl_product();
                     product.pro_name = txtProduct.Text.Trim();
                     product.cat_id = Convert.ToInt32(cboCategory.SelectedValue);
@@ -113,13 +137,22 @@ namespace Daily_Payment_System.Forms.Product
                     ConstantField.entities.tbl_product.Add(product);
                     ConstantField.entities.SaveChanges();
                     MsgBox.showInfor(ConstantField.TEXT_MSG_INFO);
-                }
             }
             catch (Exception ex)
             {
                 MsgBox.showWarning(ex.Message);
             }
-           
+        }
+
+        private void reset()
+        {
+            cboCategory.SelectedIndex = -1;
+            txtProduct.Clear();
+            picProduct.Image = Properties.Resources.no_image;
+            lblLoadImage.Text = KH.BROWSE_IMAGE;
+            lblLoadImage.LinkColor = Color.Blue;
+            lblLoadImage.Tag = 0;
+            btnLeft.Enabled = btnRight.Enabled = btnTop.Enabled = btnBottom.Enabled = false;
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
