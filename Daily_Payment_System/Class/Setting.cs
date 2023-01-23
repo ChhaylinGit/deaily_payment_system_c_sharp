@@ -57,7 +57,7 @@ namespace Daily_Payment_System.Class
             Properties.Settings.Default.Save();
         }
 
-        public static Image CovertImage(Byte[] photo)
+        public static Image ConvertImage(Byte[] photo)
         {
             Image newimg;
             using (MemoryStream ms = new MemoryStream(photo, 0, photo.Length))

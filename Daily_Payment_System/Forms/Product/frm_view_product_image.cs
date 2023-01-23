@@ -25,7 +25,7 @@ namespace Daily_Payment_System.Forms.Product
         private void frm_view_product_image_Load(object sender, EventArgs e)
         {
             this.Text = this.title;
-            picProduct.Image = this.bytes != null ? Setting.CovertImage(this.bytes) : Properties.Resources.no_image;
+            picProduct.Image = this.bytes != null ? Setting.ConvertImage(this.bytes) : Properties.Resources.no_image;
         }
     }
 }

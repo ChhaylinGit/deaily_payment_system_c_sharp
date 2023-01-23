@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,9 +27,27 @@ namespace Daily_Payment_System.Forms.Product
         private void frm_product_list_Load(object sender, EventArgs e)
         {
             Setting.dataGridViewStyle(dgvProduct);
-            dgvProduct.DataSource = Utils.GetProducts();
+            
             this.dgvProduct.Columns["col_img"].DefaultCellStyle.NullValue = Properties.Resources.no_image;
         }
+
+        private void frm_product_list_Shown(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(show);
+            thread.Start();
+            
+        }
+
+
+        void show()
+        {
+            var query = Utils.GetProducts();
+            this.BeginInvoke((MethodInvoker)(() =>
+            {
+                dgvProduct.DataSource = query;
+            }));
+        }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -37,8 +56,6 @@ namespace Daily_Payment_System.Forms.Product
                 NotifyMainFormToOpenChildForm2();
             }
         }
-
-       
 
         private void dgvProduct_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -60,9 +77,11 @@ namespace Daily_Payment_System.Forms.Product
                 {
                     var product = new vw_select_product
                     {
+                        pro_id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["col_pro_id"].Value),
                         cat_id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["col_cat_id"].Value),
-                        pro_name = dgvProduct.Rows[e.RowIndex].Cells["col_pro_name"].Value.ToString()
-                    };
+                        pro_name = dgvProduct.Rows[e.RowIndex].Cells["col_pro_name"].Value.ToString(),
+                        image = (byte[])dgvProduct.Rows[e.RowIndex].Cells["col_img"].Value
+                };
                     TransfEvent(product);
                 }
             }

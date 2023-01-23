@@ -127,6 +127,7 @@
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(99, 38);
             this.btnSave.TabIndex = 8;
+            this.btnSave.Tag = "0";
             this.btnSave.Text = "រក្សាទុក";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = false;

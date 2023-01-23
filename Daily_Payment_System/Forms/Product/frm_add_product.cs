@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -35,10 +36,12 @@ namespace Daily_Payment_System.Forms.Product
         private void frm_add_product_Load(object sender, EventArgs e)
         {
             Utils.loadCategory(cboCategory,false);
-            if(product != null)
+            if(product.pro_id != 0)
             {
                 cboCategory.SelectedValue = product.cat_id;
                 txtProduct.Text = product.pro_name;
+                picProduct.Image = product.image == null ? Properties.Resources.no_image : Setting.ConvertImage(product.image);
+                btnSave.Tag = 1;
             }
         }
 
@@ -114,13 +117,24 @@ namespace Daily_Payment_System.Forms.Product
         {
             if (!empty())
             {
-                if (MsgBox.showQuestion(ConstantField.TEXT_MSG_ASK_FOR_INSERT))
+                if (Convert.ToInt16(btnSave.Tag) == 0)
                 {
-                    save();
+                    if (MsgBox.showQuestion(ConstantField.TEXT_MSG_ASK_FOR_INSERT))
+                    {
+                        save();
+                        reset();
+                        frm_product_list obj = (frm_product_list)Application.OpenForms["frm_product_list"];
+                        obj.dgvProduct.DataSource = Utils.GetProducts();
+                    }
+                }
+                else
+                {
+                    update();
                     reset();
                     frm_product_list obj = (frm_product_list)Application.OpenForms["frm_product_list"];
                     obj.dgvProduct.DataSource = Utils.GetProducts();
                 }
+               
             }
         }
 
@@ -128,18 +142,44 @@ namespace Daily_Payment_System.Forms.Product
         {
             try
             {
-                    tbl_product product = new tbl_product();
-                    product.pro_name = txtProduct.Text.Trim();
-                    product.cat_id = Convert.ToInt32(cboCategory.SelectedValue);
-                    if (!string.IsNullOrEmpty(imagePath)) { product.image = imageToByteArray(picProduct.Image); }
-                    product.entry_date = DateTime.Now;
-                    product.status = chkStatus.Checked;
-                    ConstantField.entities.tbl_product.Add(product);
-                    ConstantField.entities.SaveChanges();
-                    MsgBox.showInfor(ConstantField.TEXT_MSG_INFO);
+                Cursor = Cursors.WaitCursor;
+                tbl_product product = new tbl_product();
+                product.pro_name = txtProduct.Text.Trim();
+                product.cat_id = Convert.ToInt32(cboCategory.SelectedValue);
+                if (!string.IsNullOrEmpty(imagePath)) { product.image = imageToByteArray(picProduct.Image); }
+                product.entry_date = DateTime.Now;
+                product.status = chkStatus.Checked;
+                ConstantField.entities.tbl_product.Add(product);
+                ConstantField.entities.SaveChanges();
+                MsgBox.showInfor(ConstantField.TEXT_MSG_INFO);
+                Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
+                Cursor = Cursors.Default;
+                MsgBox.showWarning(ex.Message);
+            }
+        }
+
+        private void update()
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+                var query = ConstantField.entities.tbl_product.Where(f=>f.pro_id == product.pro_id).SingleOrDefault();
+                query.pro_name = txtProduct.Text.Trim();
+                query.cat_id = Convert.ToInt32(cboCategory.SelectedValue);
+                if (!string.IsNullOrEmpty(imagePath)) { query.image = imageToByteArray(picProduct.Image); }
+                query.edit_date = DateTime.Now;
+                query.status = chkStatus.Checked;
+                ConstantField.entities.Entry(query).State = EntityState.Modified;
+                ConstantField.entities.SaveChanges();
+                MsgBox.showInfor(ConstantField.TEXT_MSG_INFO);
+                Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
                 MsgBox.showWarning(ex.Message);
             }
         }
