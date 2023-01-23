@@ -58,7 +58,7 @@
     <Compile Include="BaseConnection.cs" />
     <Compile Include="Class\ConstantField.cs" />
     <Compile Include="Class\MsgBox.cs" />
-    <Compile Include="Class\Setting.cs" />
+    <Compile Include="Class\Settings.cs" />
     <Compile Include="Class\Utils.cs" />
     <Compile Include="Config\frm_connection_config.cs">
       <SubType>Form</SubType>
@@ -123,6 +123,12 @@
     <Compile Include="Forms\Product\frm_view_product_image.Designer.cs">
       <DependentUpon>frm_view_product_image.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Other\frm_loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Other\frm_loading.Designer.cs">
+      <DependentUpon>frm_loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Msg\frm_message.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\frm_view_product_image.resx">
       <DependentUpon>frm_view_product_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Other\frm_loading.resx">
+      <DependentUpon>frm_loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Msg\frm_message.resx">
       <DependentUpon>frm_message.cs</DependentUpon>
@@ -224,6 +233,8 @@
       <DependentUpon>DPS_Model.edmx</DependentUpon>
       <LastGenOutput>DPS_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\refresh_24px.png" />
+    <None Include="Resources\loading.gif" />
     <None Include="Resources\ok_24px.png" />
     <None Include="Resources\no_image.png" />
     <None Include="Resources\trash_24px.png" />

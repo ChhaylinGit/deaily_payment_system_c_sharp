@@ -40,7 +40,7 @@ namespace Daily_Payment_System.Forms.Product
             {
                 cboCategory.SelectedValue = product.cat_id;
                 txtProduct.Text = product.pro_name;
-                picProduct.Image = product.image == null ? Properties.Resources.no_image : Setting.ConvertImage(product.image);
+                picProduct.Image = product.image == null ? Properties.Resources.no_image : Settings.ConvertImage(product.image);
                 btnSave.Tag = 1;
             }
         }
@@ -51,7 +51,7 @@ namespace Daily_Payment_System.Forms.Product
                 return;
 
             Image oldImage = pb.Image;
-            pb.Image = Setting.RotateImage(img, angle);
+            pb.Image = Settings.RotateImage(img, angle);
             if (oldImage != null)
             {
                 oldImage.Dispose();

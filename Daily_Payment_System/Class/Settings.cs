@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Daily_Payment_System.Class
 {
-    class Setting
+    class Settings
     {
         public static SqlConnection connection = new SqlConnection(ConstantField.CONNECTION_STRING);
 

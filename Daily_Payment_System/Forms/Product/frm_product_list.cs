@@ -1,4 +1,4 @@
-﻿using Daily_Payment_System.Class;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Daily_Payment_System.Class;
+using Daily_Payment_System.Forms.Setting;
 
 namespace Daily_Payment_System.Forms.Product
 {
@@ -19,6 +21,7 @@ namespace Daily_Payment_System.Forms.Product
             InitializeComponent();
         }
         frm_view_product_image frm_View_Product;
+        frm_loading frm = new frm_loading();
 
         public Action NotifyMainFormToOpenChildForm2;
         public delegate void TransfDelegate(vw_select_product product);
@@ -26,25 +29,28 @@ namespace Daily_Payment_System.Forms.Product
 
         private void frm_product_list_Load(object sender, EventArgs e)
         {
-            Setting.dataGridViewStyle(dgvProduct);
-            
+            Class.Settings.dataGridViewStyle(dgvProduct);
             this.dgvProduct.Columns["col_img"].DefaultCellStyle.NullValue = Properties.Resources.no_image;
         }
 
         private void frm_product_list_Shown(object sender, EventArgs e)
         {
-            Thread thread = new Thread(show);
-            thread.Start();
-            
+            Thread thread = new Thread(showProduct);
+            frm.Show();
+            thread.Start("");
         }
 
-
-        void show()
+        private void showProduct(object search)
         {
             var query = Utils.GetProducts();
+            if (!string.IsNullOrEmpty(search.ToString()))
+            {
+                query = query.Where(f => f.pro_name.ToLower().Contains(search.ToString().ToLower()) || f.category.ToLower().Contains(search.ToString().ToLower())).ToList();
+            }
             this.BeginInvoke((MethodInvoker)(() =>
             {
                 dgvProduct.DataSource = query;
+                frm.Hide();
             }));
         }
 
@@ -59,7 +65,7 @@ namespace Daily_Payment_System.Forms.Product
 
         private void dgvProduct_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            Setting.DataGridViewRowNum(dgvProduct, "col_lr");
+            Settings.DataGridViewRowNum(dgvProduct, "col_lr");
         }
 
       
@@ -90,6 +96,32 @@ namespace Daily_Payment_System.Forms.Product
         private void dgvProduct_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             dgvProduct.Cursor = (e.ColumnIndex == dgvProduct.Columns["col_img"].Index && e.RowIndex > -1) ? Cursors.Hand : Cursors.Default;
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(txtSearch.Text.Trim()))
+                {
+                    Thread thread = new Thread(showProduct);
+                    frm.Show();
+                    thread.Start(txtSearch.Text.Trim());
+                }
+            }
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                if (string.IsNullOrEmpty(txtSearch.Text.Trim()))
+                {
+                    Thread thread = new Thread(showProduct);
+                    frm.Show();
+                    thread.Start("");
+                }
+            }
         }
     }
 }

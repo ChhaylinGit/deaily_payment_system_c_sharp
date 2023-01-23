@@ -32,7 +32,7 @@ namespace Daily_Payment_System.Class
         public static string USER = Properties.Settings.Default.USER;
         public static string PASSWORD = Properties.Settings.Default.PASSWORD;
         public static string CONNECTION_STRING = "Server="+ SERVER_IP + ";Database="+ DATABASE + ";User Id="+ USER + ";Password="+ PASSWORD + ";";
-        public static DailyPaymentEntities entities = new DailyPaymentEntities(Setting.getConnection());
+        public static DailyPaymentEntities entities = new DailyPaymentEntities(Settings.getConnection());
 
     }
 }

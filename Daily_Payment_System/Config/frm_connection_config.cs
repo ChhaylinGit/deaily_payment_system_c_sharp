@@ -59,7 +59,7 @@ namespace Daily_Payment_System.Config
         private void testConnectionThread()
         {
             btnTestConnection.Invoke(new MethodInvoker(delegate { Cursor = Cursors.WaitCursor; btnTestConnection.Enabled = false; btnSave.Enabled = false; btnTestConnection.Text = "Connecting..."; }));
-            if (Setting.testConnectionSuccess(txtServerIP.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text))
+            if (Settings.testConnectionSuccess(txtServerIP.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text))
             {
                 MsgBox.showInfor("Connection Success!");
             }
@@ -73,10 +73,10 @@ namespace Daily_Payment_System.Config
         private void saveConnectionThread()
         {
             btnSave.Invoke(new MethodInvoker(delegate { Cursor = Cursors.WaitCursor; btnSave.Enabled = false; btnTestConnection.Enabled = false; btnSave.Text = "Saving..."; }));
-            if (Setting.testConnectionSuccess(txtServerIP.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text))
+            if (Settings.testConnectionSuccess(txtServerIP.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text))
             {
                 btnSave.Invoke(new MethodInvoker(delegate { Cursor = Cursors.Default; btnTestConnection.Enabled = false; btnSave.Text = "Connected"; }));
-                Setting.saveConnection(txtServerIP.Text.Trim(), txtDatabase.Text.Trim(), txtUser.Text.Trim(), txtPassword.Text.Trim());
+                Settings.saveConnection(txtServerIP.Text.Trim(), txtDatabase.Text.Trim(), txtUser.Text.Trim(), txtPassword.Text.Trim());
                 MsgBox.showInfor("Connection Success!");
             }
             else

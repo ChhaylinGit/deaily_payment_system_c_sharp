@@ -18,7 +18,7 @@ namespace Daily_Payment_System
             bool result = false;
             try
             {
-                Setting.connection.Open();
+                Settings.connection.Open();
                 result = true;
             }
             catch (Exception ex)
@@ -27,7 +27,7 @@ namespace Daily_Payment_System
             }
             finally
             {
-                Setting.connection.Close();
+                Settings.connection.Close();
             }
             return result;
         }
