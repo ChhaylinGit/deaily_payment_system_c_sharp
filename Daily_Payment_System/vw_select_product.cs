@@ -20,5 +20,6 @@ namespace Daily_Payment_System
         public string category { get; set; }
         public byte[] image { get; set; }
         public System.DateTime entry_date { get; set; }
+        public bool status { get; set; }
     }
 }

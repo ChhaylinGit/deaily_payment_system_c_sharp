@@ -32,6 +32,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ចកចញToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_change_database = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_exchange_rate = new System.Windows.Forms.ToolStripMenuItem();
             this.ករកណតToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_printer = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +41,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.sub_tsm_change_database = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_category = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,13 @@
             this.ចកចញToolStripMenuItem.Size = new System.Drawing.Size(215, 28);
             this.ចកចញToolStripMenuItem.Text = "ចាកចេញ";
             // 
+            // sub_tsm_change_database
+            // 
+            this.sub_tsm_change_database.Name = "sub_tsm_change_database";
+            this.sub_tsm_change_database.Size = new System.Drawing.Size(215, 28);
+            this.sub_tsm_change_database.Text = "ប្តូរDatabase Connection";
+            this.sub_tsm_change_database.Click += new System.EventHandler(this.sub_tsm_change_database_Click);
+            // 
             // tsm_exchange_rate
             // 
             this.tsm_exchange_rate.Name = "tsm_exchange_rate";
@@ -92,7 +100,8 @@
             // tsm_printer
             // 
             this.tsm_printer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sub_tsm_product});
+            this.sub_tsm_product,
+            this.sub_tsm_category});
             this.tsm_printer.Name = "tsm_printer";
             this.tsm_printer.Size = new System.Drawing.Size(79, 28);
             this.tsm_printer.Text = "សម្ភារៈព្រីន";
@@ -100,7 +109,7 @@
             // sub_tsm_product
             // 
             this.sub_tsm_product.Name = "sub_tsm_product";
-            this.sub_tsm_product.Size = new System.Drawing.Size(148, 28);
+            this.sub_tsm_product.Size = new System.Drawing.Size(180, 28);
             this.sub_tsm_product.Text = "ទំនិញផ្សេងៗ";
             this.sub_tsm_product.Click += new System.EventHandler(this.sub_tsm_product_Click);
             // 
@@ -130,12 +139,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // sub_tsm_change_database
+            // sub_tsm_category
             // 
-            this.sub_tsm_change_database.Name = "sub_tsm_change_database";
-            this.sub_tsm_change_database.Size = new System.Drawing.Size(215, 28);
-            this.sub_tsm_change_database.Text = "ប្តូរDatabase Connection";
-            this.sub_tsm_change_database.Click += new System.EventHandler(this.sub_tsm_change_database_Click);
+            this.sub_tsm_category.Name = "sub_tsm_category";
+            this.sub_tsm_category.Size = new System.Drawing.Size(180, 28);
+            this.sub_tsm_category.Text = "ប្រភេទទំនិញ";
+            this.sub_tsm_category.Click += new System.EventHandler(this.sub_tsm_category_Click);
             // 
             // frm_main
             // 
@@ -176,6 +185,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_printer;
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_product;
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_change_database;
+        private System.Windows.Forms.ToolStripMenuItem sub_tsm_category;
     }
 }
 

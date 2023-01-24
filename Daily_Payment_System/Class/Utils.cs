@@ -12,13 +12,19 @@ namespace Daily_Payment_System.Class
     {
         public static List<tbl_category> categories()
         {
-            var query = ConstantField.entities.tbl_category.ToList();
+            var query = ConstantField.entities.tbl_category.Where(f=>f.status == true).ToList();
             return query;
         }
 
         public static List<vw_select_product> GetProducts()
         {
             var query = ConstantField.entities.vw_select_product.ToList();
+            return query;
+        }
+
+        public static List<tbl_category> GetCategories()
+        {
+            var query = ConstantField.entities.tbl_category.ToList();
             return query;
         }
 

@@ -133,6 +133,7 @@ namespace Daily_Payment_System.Forms.Product
                     reset();
                     frm_product_list obj = (frm_product_list)Application.OpenForms["frm_product_list"];
                     obj.dgvProduct.DataSource = Utils.GetProducts();
+                    this.Close();
                 }
                
             }

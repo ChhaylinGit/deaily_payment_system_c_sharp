@@ -1,4 +1,5 @@
 ﻿using Daily_Payment_System.Config;
+using Daily_Payment_System.Forms.Category;
 using Daily_Payment_System.Forms.Product;
 using Daily_Payment_System.Msg;
 using System;
@@ -21,6 +22,8 @@ namespace Daily_Payment_System.Forms
         private frm_product_list product_List;
         private frm_add_product add_product;
         private frm_connection_config frm_connection;
+        private frm_category_list frm_category;
+        private frm_add_category add_category;
 
         public frm_main()
         {
@@ -85,6 +88,29 @@ namespace Daily_Payment_System.Forms
             frm_connection = new frm_connection_config();
             frm_connection.MdiParent = this;
             frm_connection.Show();
+        }
+
+        private void sub_tsm_category_Click(object sender, EventArgs e)
+        {
+            frm_category = new frm_category_list();
+            frm_category.MdiParent = this;
+            frm_category.openAddCategoryForm += openAddCategoryForm;
+            frm_category.editCatgory += editCatgory;
+            frm_category.Show();
+        }
+
+        private void editCatgory(tbl_category category)
+        {
+            add_category = new frm_add_category(category);
+            add_category.MdiParent = this;
+            add_category.Show();
+        }
+
+        private void openAddCategoryForm()
+        {
+            add_category = new frm_add_category();
+            add_category.MdiParent = this;
+            add_category.Show();
         }
     }
 }

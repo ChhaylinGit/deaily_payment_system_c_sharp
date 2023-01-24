@@ -21,6 +21,7 @@ namespace Daily_Payment_System.Class
 
         public const string TEXT_MSG_INFO = "ប្រតិបត្តការណ៍ទទួលបានជោគជ័យ!";
         public const string TEXT_MSG_ASK_FOR_INSERT = "តើលោកអ្នកពិតជាចង់បញ្ចូលមែនឬទេ?";
+        public const string TEXT_MSG_ASK_FOR_UPDATE = "តើលោកអ្នកពិតជាចង់កែប្រែមែនឬទេ?";
 
         public static Image ICON_MSG_INFO = Properties.Resources.infor;
         public static Image ICON_MSG_WARNINIG = Properties.Resources.warning;

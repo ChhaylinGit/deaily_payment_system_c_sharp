@@ -36,6 +36,7 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_product' does not have 
             <PropertyRef Name="cat_id" />
             <PropertyRef Name="category" />
             <PropertyRef Name="entry_date" />
+            <PropertyRef Name="status" />
           </Key>
           <Property Name="pro_id" Type="int" Nullable="false" />
           <Property Name="pro_name" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -43,6 +44,7 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_product' does not have 
           <Property Name="category" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="image" Type="varbinary(max)" />
           <Property Name="entry_date" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="DailyPaymentModelStoreContainer">
           <EntitySet Name="tbl_category" EntityType="Self.tbl_category" Schema="dbo" store:Type="Tables" />
@@ -54,7 +56,8 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_product' does not have 
     [vw_select_product].[cat_id] AS [cat_id], 
     [vw_select_product].[category] AS [category], 
     [vw_select_product].[image] AS [image], 
-    [vw_select_product].[entry_date] AS [entry_date]
+    [vw_select_product].[entry_date] AS [entry_date], 
+    [vw_select_product].[status] AS [status]
     FROM [dbo].[vw_select_product] AS [vw_select_product]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
@@ -96,6 +99,7 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_product' does not have 
             <PropertyRef Name="cat_id" />
             <PropertyRef Name="category" />
             <PropertyRef Name="entry_date" />
+            <PropertyRef Name="status" />
           </Key>
           <Property Name="pro_id" Type="Int32" Nullable="false" />
           <Property Name="pro_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -103,6 +107,7 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_product' does not have 
           <Property Name="category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -137,6 +142,7 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_product' does not have 
           <EntitySetMapping Name="vw_select_product">
             <EntityTypeMapping TypeName="DailyPaymentModel.vw_select_product">
               <MappingFragment StoreEntitySet="vw_select_product">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="entry_date" ColumnName="entry_date" />
                 <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="category" ColumnName="category" />
