@@ -112,3 +112,5 @@ F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.pdb
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_category_list.resources
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_add_category.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_add_category.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_category_list.resources
