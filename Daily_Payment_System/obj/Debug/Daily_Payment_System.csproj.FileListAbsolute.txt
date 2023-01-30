@@ -113,5 +113,12 @@ F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.CopyComplete
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.exe
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.pdb
+<<<<<<< HEAD
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csprojAssemblyReference.cache
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Suplier.frm_add_suplier.resources
+=======
+F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_category_list.resources
+F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_add_category.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_add_category.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_category_list.resources
+>>>>>>> 68a5e14138369751423a1974193ebb300d3b6e1d

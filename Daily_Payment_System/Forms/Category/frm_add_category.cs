@@ -30,15 +30,37 @@ namespace Daily_Payment_System.Forms.Category
         {
            if(Convert.ToInt16(btnSave.Tag) == 0)
             {
-                save();
+                if (!duplicate())
+                {
+                    save();
+                }
+                else
+                {
+                    MessageBox.Show("Duplicate");
+                }
             }
             else
             {
-                if (MsgBox.showQuestion(ConstantField.TEXT_MSG_ASK_FOR_UPDATE))
+                if (!duplicate())
                 {
-                    update();
+                    if (MsgBox.showQuestion(ConstantField.TEXT_MSG_ASK_FOR_UPDATE))
+                    {
+                        update();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Duplicate");
                 }
             }
+        }
+
+        private bool duplicate()
+        {
+            bool result = false;
+            var query = ConstantField.entities.tbl_category.Where(f => f.category.ToLower().Equals(txtCategory.Text.ToLower()) && f.cat_id != category.cat_id).ToList();
+            result = query.Count > 0;
+            return result;
         }
 
         private void save()
