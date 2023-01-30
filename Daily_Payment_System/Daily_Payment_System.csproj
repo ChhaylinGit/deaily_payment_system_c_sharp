@@ -141,6 +141,18 @@
     <Compile Include="Forms\Other\frm_loading.Designer.cs">
       <DependentUpon>frm_loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Suplier\frm_add_suplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Suplier\frm_add_suplier.Designer.cs">
+      <DependentUpon>frm_add_suplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Suplier\frm_suplier_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Suplier\frm_suplier_list.Designer.cs">
+      <DependentUpon>frm_suplier_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="Msg\frm_message.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,9 @@
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_product.cs">
+      <DependentUpon>DPS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_supplier.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Text\KH.cs" />
@@ -192,6 +207,12 @@
     <EmbeddedResource Include="Forms\Other\frm_loading.resx">
       <DependentUpon>frm_loading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Suplier\frm_add_suplier.resx">
+      <DependentUpon>frm_add_suplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Suplier\frm_suplier_list.resx">
+      <DependentUpon>frm_suplier_list.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Msg\frm_message.resx">
       <DependentUpon>frm_message.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,7 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Stock\" />
-    <Folder Include="Forms\Suplier\" />
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>

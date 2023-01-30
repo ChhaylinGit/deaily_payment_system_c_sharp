@@ -37,11 +37,12 @@
             this.ករកណតToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_printer = new System.Windows.Forms.ToolStripMenuItem();
             this.sub_tsm_product = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_category = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.sub_tsm_category = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_supplier = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +102,8 @@
             // 
             this.tsm_printer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sub_tsm_product,
-            this.sub_tsm_category});
+            this.sub_tsm_category,
+            this.sub_tsm_supplier});
             this.tsm_printer.Name = "tsm_printer";
             this.tsm_printer.Size = new System.Drawing.Size(79, 28);
             this.tsm_printer.Text = "សម្ភារៈព្រីន";
@@ -112,6 +114,13 @@
             this.sub_tsm_product.Size = new System.Drawing.Size(180, 28);
             this.sub_tsm_product.Text = "ទំនិញផ្សេងៗ";
             this.sub_tsm_product.Click += new System.EventHandler(this.sub_tsm_product_Click);
+            // 
+            // sub_tsm_category
+            // 
+            this.sub_tsm_category.Name = "sub_tsm_category";
+            this.sub_tsm_category.Size = new System.Drawing.Size(180, 28);
+            this.sub_tsm_category.Text = "ប្រភេទទំនិញ";
+            this.sub_tsm_category.Click += new System.EventHandler(this.sub_tsm_category_Click);
             // 
             // toolStrip
             // 
@@ -139,12 +148,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // sub_tsm_category
+            // sub_tsm_supplier
             // 
-            this.sub_tsm_category.Name = "sub_tsm_category";
-            this.sub_tsm_category.Size = new System.Drawing.Size(180, 28);
-            this.sub_tsm_category.Text = "ប្រភេទទំនិញ";
-            this.sub_tsm_category.Click += new System.EventHandler(this.sub_tsm_category_Click);
+            this.sub_tsm_supplier.Name = "sub_tsm_supplier";
+            this.sub_tsm_supplier.Size = new System.Drawing.Size(180, 28);
+            this.sub_tsm_supplier.Text = "អ្នកផ្គត់ផ្គង់";
+            this.sub_tsm_supplier.Click += new System.EventHandler(this.sub_tsm_supplier_Click);
             // 
             // frm_main
             // 
@@ -186,6 +195,7 @@
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_product;
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_change_database;
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_category;
+        private System.Windows.Forms.ToolStripMenuItem sub_tsm_supplier;
     }
 }
 

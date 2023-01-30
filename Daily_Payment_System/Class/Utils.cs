@@ -28,6 +28,12 @@ namespace Daily_Payment_System.Class
             return query;
         }
 
+        public static List<tbl_supplier> GetSuplier()
+        {
+            var query = ConstantField.entities.tbl_supplier.ToList();
+            return query;
+        }
+
         public static void loadCategory(ComboBox cboCategory,bool showFirst)
         {
             cboCategory.DataSource = categories();

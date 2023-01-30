@@ -1,6 +1,7 @@
 ﻿using Daily_Payment_System.Config;
 using Daily_Payment_System.Forms.Category;
 using Daily_Payment_System.Forms.Product;
+using Daily_Payment_System.Forms.Suplier;
 using Daily_Payment_System.Msg;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,17 @@ namespace Daily_Payment_System.Forms
         private frm_exchange_rate exchange_rate;
         private frm_add_rate add_rate;
         private frm_message message;
+
         private frm_product_list product_List;
         private frm_add_product add_product;
+
         private frm_connection_config frm_connection;
+
         private frm_category_list frm_category;
         private frm_add_category add_category;
+
+        private frm_suplier_list suplier_list;
+        private frm_add_suplier add_suplier;
 
         public frm_main()
         {
@@ -111,6 +118,21 @@ namespace Daily_Payment_System.Forms
             add_category = new frm_add_category();
             add_category.MdiParent = this;
             add_category.Show();
+        }
+
+        private void sub_tsm_supplier_Click(object sender, EventArgs e)
+        {
+            suplier_list = new frm_suplier_list();
+            suplier_list.MdiParent = this;
+            suplier_list.openAddSuplierForm += openAddSuplierForm;
+            suplier_list.Show();
+        }
+
+        private void openAddSuplierForm()
+        {
+            add_suplier = new frm_add_suplier();
+            add_suplier.MdiParent = this;
+            add_suplier.Show();
         }
     }
 }
