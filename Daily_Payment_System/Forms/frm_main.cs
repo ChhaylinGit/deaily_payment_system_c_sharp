@@ -1,6 +1,7 @@
 ﻿using Daily_Payment_System.Config;
 using Daily_Payment_System.Forms.Category;
 using Daily_Payment_System.Forms.Product;
+using Daily_Payment_System.Forms.Stock;
 using Daily_Payment_System.Forms.Suplier;
 using Daily_Payment_System.Msg;
 using System;
@@ -31,6 +32,8 @@ namespace Daily_Payment_System.Forms
 
         private frm_suplier_list suplier_list;
         private frm_add_suplier add_suplier;
+
+        private frm_add_stock stock;
 
         public frm_main()
         {
@@ -74,6 +77,8 @@ namespace Daily_Payment_System.Forms
             product_List.TransfEvent += TransfEvent;
             product_List.Show();
         }
+
+      
 
         private void NotifyMainFormToOpenForm2()
         {
@@ -125,7 +130,15 @@ namespace Daily_Payment_System.Forms
             suplier_list = new frm_suplier_list();
             suplier_list.MdiParent = this;
             suplier_list.openAddSuplierForm += openAddSuplierForm;
+            suplier_list.editSuplier += editCatgory;
             suplier_list.Show();
+        }
+
+        private void editCatgory(tbl_supplier supplier)
+        {
+            add_suplier = new frm_add_suplier(supplier);
+            add_suplier.MdiParent = this;
+            add_suplier.Show();
         }
 
         private void openAddSuplierForm()
@@ -133,6 +146,36 @@ namespace Daily_Payment_System.Forms
             add_suplier = new frm_add_suplier();
             add_suplier.MdiParent = this;
             add_suplier.Show();
+        }
+
+        private void sub_tsm_stock_Click(object sender, EventArgs e)
+        {
+            stock = new frm_add_stock();
+            stock.MdiParent = this;
+            stock.openProductListForm += openProductListForm;
+            stock.Show();
+        }
+
+        private void openProductListForm()
+        {
+            product_List = new frm_product_list();
+            product_List.SelectProductEvent += SelectProductEvent;
+            product_List.btnAdd.Visible = false;
+            product_List.dgvProduct.Columns["col_edit"].Visible = false;
+            product_List.dgvProduct.Columns["col_img"].Visible = false;
+            product_List.dgvProduct.Columns["col_select"].Visible = true;
+            product_List.MdiParent = this;
+            product_List.Show();
+        }
+
+        private void SelectProductEvent(vw_select_product product)
+        {
+            stock.Close();
+            stock = new frm_add_stock(product);
+            stock.MdiParent = this;
+            stock.Show();
+            stock.openProductListForm += openProductListForm;
+            product_List.Close();
         }
     }
 }

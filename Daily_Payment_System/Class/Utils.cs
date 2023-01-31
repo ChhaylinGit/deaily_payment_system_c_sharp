@@ -42,6 +42,22 @@ namespace Daily_Payment_System.Class
             if (!showFirst) { cboCategory.SelectedIndex = -1; }
         }
 
+        public static void loadProduct(ComboBox cboProduct, bool showFirst)
+        {
+            cboProduct.DataSource = GetProducts();
+            cboProduct.DisplayMember = "pro_name";
+            cboProduct.ValueMember = "pro_id";
+            if (!showFirst) { cboProduct.SelectedIndex = -1; }
+        }
+
+        public static void loadSuplier(ComboBox cboSuplier, bool showFirst)
+        {
+            cboSuplier.DataSource = GetSuplier();
+            cboSuplier.DisplayMember = "spl_name";
+            cboSuplier.ValueMember = "spl_id";
+            if (!showFirst) { cboSuplier.SelectedIndex = -1; }
+        }
+
         static public byte[] saveImage(string path)
         {
             byte[] data = null;

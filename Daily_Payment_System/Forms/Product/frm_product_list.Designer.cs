@@ -41,6 +41,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.col_edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.col_select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.col_lr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +109,7 @@
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_edit,
+            this.col_select,
             this.col_lr,
             this.col_pro_id,
             this.col_pro_name,
@@ -153,6 +155,15 @@
             this.col_edit.Text = "កែប្រែ";
             this.col_edit.UseColumnTextForButtonValue = true;
             this.col_edit.Width = 70;
+            // 
+            // col_select
+            // 
+            this.col_select.HeaderText = "";
+            this.col_select.Name = "col_select";
+            this.col_select.ReadOnly = true;
+            this.col_select.Text = "ជ្រើសរើស";
+            this.col_select.UseColumnTextForButtonValue = true;
+            this.col_select.Visible = false;
             // 
             // col_lr
             // 
@@ -264,11 +275,12 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         public System.Windows.Forms.DataGridView dgvProduct;
+        public System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewButtonColumn col_edit;
+        private System.Windows.Forms.DataGridViewButtonColumn col_select;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lr;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_pro_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_pro_name;

@@ -36,7 +36,7 @@ namespace Daily_Payment_System.Forms.Category
                 }
                 else
                 {
-                    MessageBox.Show("Duplicate");
+                    MsgBox.showWarning(string.Format(ConstantField.DUPLICATE, "ប្រភេទទំនិញនេះ"));
                 }
             }
             else
@@ -50,7 +50,7 @@ namespace Daily_Payment_System.Forms.Category
                 }
                 else
                 {
-                    MessageBox.Show("Duplicate");
+                    MsgBox.showWarning(string.Format(ConstantField.DUPLICATE, "ប្រភេទទំនិញនេះ"));
                 }
             }
         }

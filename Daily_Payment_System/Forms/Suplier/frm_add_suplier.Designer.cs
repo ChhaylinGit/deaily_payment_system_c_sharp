@@ -129,6 +129,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "បន្ថែមអ្នកផ្គត់ផ្គង់";
+            this.Load += new System.EventHandler(this.frm_add_suplier_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

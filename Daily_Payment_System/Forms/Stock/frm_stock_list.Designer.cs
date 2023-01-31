@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 270);
+            this.ClientSize = new System.Drawing.Size(923, 420);
             this.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F);
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "frm_stock_list";

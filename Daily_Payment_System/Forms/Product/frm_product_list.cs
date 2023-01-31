@@ -27,6 +27,9 @@ namespace Daily_Payment_System.Forms.Product
         public delegate void TransfDelegate(vw_select_product product);
         public event TransfDelegate TransfEvent;
 
+        public delegate void SelectProduct(vw_select_product product);
+        public event SelectProduct SelectProductEvent;
+
         private void frm_product_list_Load(object sender, EventArgs e)
         {
             Class.Settings.dataGridViewStyle(dgvProduct);
@@ -79,7 +82,8 @@ namespace Daily_Payment_System.Forms.Product
                     string proName = dgvProduct.Rows[e.RowIndex].Cells["col_pro_name"].Value.ToString();
                     frm_View_Product = new frm_view_product_image(bytes, proName);
                     frm_View_Product.Show();
-                }else if (e.ColumnIndex == dgvProduct.Columns["col_edit"].Index)
+                }
+                else if (e.ColumnIndex == dgvProduct.Columns["col_edit"].Index)
                 {
                     var product = new vw_select_product
                     {
@@ -87,8 +91,19 @@ namespace Daily_Payment_System.Forms.Product
                         cat_id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["col_cat_id"].Value),
                         pro_name = dgvProduct.Rows[e.RowIndex].Cells["col_pro_name"].Value.ToString(),
                         image = (byte[])dgvProduct.Rows[e.RowIndex].Cells["col_img"].Value
-                };
+                    };
                     TransfEvent(product);
+                }
+                else if (e.ColumnIndex == dgvProduct.Columns["col_select"].Index) {
+                    var product = new vw_select_product
+                    {
+                        pro_id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["col_pro_id"].Value),
+                        cat_id = Convert.ToInt32(dgvProduct.Rows[e.RowIndex].Cells["col_cat_id"].Value),
+                        category = dgvProduct.Rows[e.RowIndex].Cells["col_category"].Value.ToString(),
+                        pro_name = dgvProduct.Rows[e.RowIndex].Cells["col_pro_name"].Value.ToString(),
+                        image = (byte[])dgvProduct.Rows[e.RowIndex].Cells["col_img"].Value
+                    };
+                    SelectProductEvent(product);
                 }
             }
         }

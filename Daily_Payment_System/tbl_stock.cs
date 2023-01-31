@@ -12,13 +12,13 @@ namespace Daily_Payment_System
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_supplier
+    public partial class tbl_stock
     {
+        public int st_id { get; set; }
+        public int pro_id { get; set; }
         public int spl_id { get; set; }
-        public string spl_name { get; set; }
-        public string place { get; set; }
-        public System.DateTime entry_date { get; set; }
-        public Nullable<System.DateTime> edit_date { get; set; }
-        public bool status { get; set; }
+        public int qty { get; set; }
+        public decimal unit_price { get; set; }
+        public System.DateTime st_date { get; set; }
     }
 }

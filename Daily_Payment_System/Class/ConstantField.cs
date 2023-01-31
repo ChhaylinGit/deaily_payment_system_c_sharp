@@ -23,6 +23,8 @@ namespace Daily_Payment_System.Class
         public const string TEXT_MSG_ASK_FOR_INSERT = "តើលោកអ្នកពិតជាចង់បញ្ចូលមែនឬទេ?";
         public const string TEXT_MSG_ASK_FOR_UPDATE = "តើលោកអ្នកពិតជាចង់កែប្រែមែនឬទេ?";
 
+        public const string DUPLICATE = "{0}ធ្លាប់មានរួចម្តងហើយ!";
+
         public static Image ICON_MSG_INFO = Properties.Resources.infor;
         public static Image ICON_MSG_WARNINIG = Properties.Resources.warning;
         public static Image ICON_MSG_ERROR = Properties.Resources.error;

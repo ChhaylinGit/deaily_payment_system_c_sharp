@@ -141,6 +141,12 @@
     <Compile Include="Forms\Other\frm_loading.Designer.cs">
       <DependentUpon>frm_loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Stock\frm_add_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stock\frm_add_stock.Designer.cs">
+      <DependentUpon>frm_add_stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Stock\frm_stock_list.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_product.cs">
+      <DependentUpon>DPS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_stock.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_supplier.cs">
@@ -212,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Other\frm_loading.resx">
       <DependentUpon>frm_loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stock\frm_add_stock.resx">
+      <DependentUpon>frm_add_stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Stock\frm_stock_list.resx">
       <DependentUpon>frm_stock_list.cs</DependentUpon>
