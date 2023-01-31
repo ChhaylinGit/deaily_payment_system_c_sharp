@@ -189,6 +189,9 @@
     <Compile Include="vw_select_product.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="vw_select_stock.cs">
+      <DependentUpon>DPS_Model.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Config\frm_connection_config.resx">
       <DependentUpon>frm_connection_config.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +294,7 @@
       <DependentUpon>DPS_Model.edmx</DependentUpon>
       <LastGenOutput>DPS_Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\search_24px.png" />
     <None Include="Resources\refresh_24px.png" />
     <None Include="Resources\loading.gif" />
     <None Include="Resources\ok_24px.png" />

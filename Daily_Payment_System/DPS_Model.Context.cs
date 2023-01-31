@@ -30,5 +30,6 @@ namespace Daily_Payment_System
         public virtual DbSet<vw_select_product> vw_select_product { get; set; }
         public virtual DbSet<tbl_supplier> tbl_supplier { get; set; }
         public virtual DbSet<tbl_stock> tbl_stock { get; set; }
+        public virtual DbSet<vw_select_stock> vw_select_stock { get; set; }
     }
 }

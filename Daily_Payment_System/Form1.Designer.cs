@@ -28,14 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::Daily_Payment_System.Properties.Resources.search_24px;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(183, 238);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btnSearch.Size = new System.Drawing.Size(99, 38);
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.Text = "ស្វែងរក";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = global::Daily_Payment_System.Properties.Resources.refresh_24px;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(56, 238);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(99, 38);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Refresh";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -144,30 +182,12 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = global::Daily_Payment_System.Properties.Resources.refresh_24px;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(56, 238);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(99, 38);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Refresh";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 328);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -192,6 +212,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 

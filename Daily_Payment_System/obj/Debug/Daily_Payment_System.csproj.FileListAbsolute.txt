@@ -63,30 +63,6 @@ D:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj
 D:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.CopyComplete
 D:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.exe
 D:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.pdb
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Config.frm_connection_config.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Form1.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.frm_add_rate.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.frm_exchange_rate.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.frm_main.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_add_product.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_product_list.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_view_product_image.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Setting.frm_loading.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Msg.frm_message.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Properties.Resources.resources
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.GenerateResource.cache
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.CoreCompileInputs.cache
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.exe.config
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.exe
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.pdb
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.dll
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.SqlServer.dll
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.xml
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.SqlServer.xml
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.CopyComplete
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.exe
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.pdb
-D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csprojAssemblyReference.cache
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.exe.config
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.exe
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.pdb
@@ -117,3 +93,32 @@ F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.CopyComplete
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.exe
 F:\My Document\Project\C#\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.pdb
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.exe.config
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.exe
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\Daily_Payment_System.pdb
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.dll
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.SqlServer.dll
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.xml
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\bin\Debug\EntityFramework.SqlServer.xml
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Config.frm_connection_config.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Form1.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_add_category.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Category.frm_category_list.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.frm_add_rate.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.frm_exchange_rate.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.frm_main.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_add_product.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_product_list.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Product.frm_view_product_image.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Setting.frm_loading.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Stock.frm_add_stock.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Stock.frm_stock_list.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Suplier.frm_add_suplier.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Forms.Suplier.frm_suplier_list.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Msg.frm_message.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.Properties.Resources.resources
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.GenerateResource.cache
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.CoreCompileInputs.cache
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.csproj.CopyComplete
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.exe
+D:\deaily_payment_system_c_sharp\Daily_Payment_System\obj\Debug\Daily_Payment_System.pdb

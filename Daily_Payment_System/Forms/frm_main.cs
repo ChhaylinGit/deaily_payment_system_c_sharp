@@ -33,6 +33,7 @@ namespace Daily_Payment_System.Forms
         private frm_suplier_list suplier_list;
         private frm_add_suplier add_suplier;
 
+        private frm_stock_list stock_list;
         private frm_add_stock stock;
 
         public frm_main()
@@ -150,10 +151,13 @@ namespace Daily_Payment_System.Forms
 
         private void sub_tsm_stock_Click(object sender, EventArgs e)
         {
-            stock = new frm_add_stock();
-            stock.MdiParent = this;
-            stock.openProductListForm += openProductListForm;
-            stock.Show();
+            stock_list = new frm_stock_list();
+            stock_list.MdiParent = this;
+            stock_list.Show();
+            //stock = new frm_add_stock();
+            //stock.MdiParent = this;
+            //stock.openProductListForm += openProductListForm;
+            //stock.Show();
         }
 
         private void openProductListForm()

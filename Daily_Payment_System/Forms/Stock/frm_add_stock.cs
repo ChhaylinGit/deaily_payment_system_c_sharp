@@ -33,15 +33,14 @@ namespace Daily_Payment_System.Forms.Stock
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-          
-            //tbl_stock stock = new tbl_stock();
-            //stock.pro_id = product.pro_id;
-            //stock.spl_id = Convert.ToInt32(cboSuplier.SelectedValue);
-            //stock.qty = Convert.ToInt32(txtQTY.Text);
-            //stock.unit_price = Convert.ToDecimal(txtUnitPrice.Text);
-            //stock.st_date = DateTime.Now;
-            //ConstantField.entities.tbl_stock.Add(stock);
-            //ConstantField.entities.SaveChanges();
+            tbl_stock stock = new tbl_stock();
+            stock.pro_id = product.pro_id;
+            stock.spl_id = Convert.ToInt32(cboSuplier.SelectedValue);
+            stock.qty = Convert.ToInt32(txtQTY.Text);
+            stock.unit_price = Convert.ToDecimal(txtUnitPrice.Text);
+            stock.st_date = DateTime.Now;
+            ConstantField.entities.tbl_stock.Add(stock);
+            ConstantField.entities.SaveChanges();
         }
 
         private void frm_add_stock_Load(object sender, EventArgs e)

@@ -34,6 +34,12 @@ namespace Daily_Payment_System.Class
             return query;
         }
 
+        public static List<vw_select_stock> GetStock()
+        {
+            var query = ConstantField.entities.vw_select_stock.ToList();
+            return query;
+        }
+
         public static void loadCategory(ComboBox cboCategory,bool showFirst)
         {
             cboCategory.DataSource = categories();
