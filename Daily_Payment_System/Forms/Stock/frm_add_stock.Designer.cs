@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.cboSuplier = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,6 +63,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.col_delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.col_lr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,11 +79,6 @@
             this.col_unit_prie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_currency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,7 +106,7 @@
             this.cboSuplier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboSuplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSuplier.FormattingEnabled = true;
-            this.cboSuplier.Location = new System.Drawing.Point(83, 158);
+            this.cboSuplier.Location = new System.Drawing.Point(79, 16);
             this.cboSuplier.Name = "cboSuplier";
             this.cboSuplier.Size = new System.Drawing.Size(340, 32);
             this.cboSuplier.TabIndex = 5;
@@ -113,7 +114,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 162);
+            this.label3.Location = new System.Drawing.Point(10, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 24);
             this.label3.TabIndex = 4;
@@ -131,7 +132,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 248);
+            this.label5.Location = new System.Drawing.Point(7, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 24);
             this.label5.TabIndex = 9;
@@ -179,6 +180,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.lblCategory);
             this.groupBox1.Controls.Add(this.lblProduct);
             this.groupBox1.Controls.Add(this.lblSelectProduct);
@@ -186,7 +188,7 @@
             this.groupBox1.Controls.Add(this.picProduct);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(10, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(431, 143);
             this.groupBox1.TabIndex = 13;
@@ -234,7 +236,7 @@
             // 
             // txtQTY
             // 
-            this.txtQTY.Location = new System.Drawing.Point(83, 201);
+            this.txtQTY.Location = new System.Drawing.Point(79, 59);
             this.txtQTY.Name = "txtQTY";
             this.txtQTY.Size = new System.Drawing.Size(340, 32);
             this.txtQTY.TabIndex = 14;
@@ -244,7 +246,7 @@
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(83, 244);
+            this.txtUnitPrice.Location = new System.Drawing.Point(79, 102);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(340, 32);
             this.txtUnitPrice.TabIndex = 15;
@@ -304,7 +306,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 205);
+            this.label7.Location = new System.Drawing.Point(5, 63);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 24);
             this.label7.TabIndex = 19;
@@ -313,6 +315,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 126);
             this.panel3.Name = "panel3";
@@ -329,16 +332,16 @@
             this.panel4.Controls.Add(this.lblTotalPrice);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.cboSuplier);
-            this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Controls.Add(this.txtQTY);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.txtUnitPrice);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(10, 0);
+            this.panel4.Enabled = false;
+            this.panel4.Location = new System.Drawing.Point(10, 143);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(431, 388);
+            this.panel4.Size = new System.Drawing.Size(431, 245);
             this.panel4.TabIndex = 20;
             // 
             // btnAdd
@@ -350,7 +353,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = global::Daily_Payment_System.Properties.Resources.new_copy_24px;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(324, 330);
+            this.btnAdd.Location = new System.Drawing.Point(320, 188);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdd.Size = new System.Drawing.Size(99, 38);
@@ -365,7 +368,7 @@
             this.radDollar.AutoSize = true;
             this.radDollar.Checked = true;
             this.radDollar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radDollar.Location = new System.Drawing.Point(83, 336);
+            this.radDollar.Location = new System.Drawing.Point(79, 194);
             this.radDollar.Name = "radDollar";
             this.radDollar.Size = new System.Drawing.Size(55, 28);
             this.radDollar.TabIndex = 22;
@@ -377,7 +380,7 @@
             // 
             this.radRiel.AutoSize = true;
             this.radRiel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radRiel.Location = new System.Drawing.Point(166, 336);
+            this.radRiel.Location = new System.Drawing.Point(162, 194);
             this.radRiel.Name = "radRiel";
             this.radRiel.Size = new System.Drawing.Size(54, 28);
             this.radRiel.TabIndex = 6;
@@ -390,7 +393,7 @@
             this.lblTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTotalPrice.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTotalPrice.Location = new System.Drawing.Point(83, 287);
+            this.lblTotalPrice.Location = new System.Drawing.Point(79, 145);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(340, 30);
             this.lblTotalPrice.TabIndex = 21;
@@ -400,7 +403,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 291);
+            this.label8.Location = new System.Drawing.Point(16, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 24);
             this.label8.TabIndex = 20;
@@ -423,6 +426,7 @@
             this.dgvStock.AllowUserToDeleteRows = false;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_delete,
             this.col_lr,
             this.col_pro_id,
             this.col_pro_name,
@@ -441,103 +445,6 @@
             this.dgvStock.TabIndex = 5;
             this.dgvStock.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvStock_RowsAdded);
             this.dgvStock.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvStock_RowsRemoved);
-            // 
-            // col_lr
-            // 
-            this.col_lr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_lr.DefaultCellStyle = dataGridViewCellStyle6;
-            this.col_lr.HeaderText = "ល.រ";
-            this.col_lr.Name = "col_lr";
-            this.col_lr.ReadOnly = true;
-            this.col_lr.Width = 57;
-            // 
-            // col_pro_id
-            // 
-            this.col_pro_id.DataPropertyName = "pro_id";
-            this.col_pro_id.HeaderText = "pro_id";
-            this.col_pro_id.Name = "col_pro_id";
-            this.col_pro_id.ReadOnly = true;
-            this.col_pro_id.Visible = false;
-            // 
-            // col_pro_name
-            // 
-            this.col_pro_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_pro_name.DataPropertyName = "pro_name";
-            this.col_pro_name.HeaderText = "ឈ្មោះទំនិញ";
-            this.col_pro_name.Name = "col_pro_name";
-            this.col_pro_name.ReadOnly = true;
-            this.col_pro_name.Width = 99;
-            // 
-            // col_category
-            // 
-            this.col_category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_category.DataPropertyName = "category";
-            this.col_category.HeaderText = "ប្រភេទទំនិញ";
-            this.col_category.Name = "col_category";
-            this.col_category.ReadOnly = true;
-            this.col_category.Width = 102;
-            // 
-            // col_spl_id
-            // 
-            this.col_spl_id.DataPropertyName = "spl_id";
-            this.col_spl_id.HeaderText = "spl_id";
-            this.col_spl_id.Name = "col_spl_id";
-            this.col_spl_id.ReadOnly = true;
-            this.col_spl_id.Visible = false;
-            // 
-            // col_spl_name
-            // 
-            this.col_spl_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_spl_name.DataPropertyName = "spl_name";
-            this.col_spl_name.HeaderText = "អ្នកផ្គត់ផ្គង់";
-            this.col_spl_name.Name = "col_spl_name";
-            this.col_spl_name.ReadOnly = true;
-            this.col_spl_name.Width = 89;
-            // 
-            // col_qty
-            // 
-            this.col_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_qty.DataPropertyName = "qty";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_qty.DefaultCellStyle = dataGridViewCellStyle7;
-            this.col_qty.HeaderText = "ចំនួនទំនិញ";
-            this.col_qty.Name = "col_qty";
-            this.col_qty.ReadOnly = true;
-            this.col_qty.Width = 94;
-            // 
-            // col_unit_prie
-            // 
-            this.col_unit_prie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_unit_prie.DataPropertyName = "unit_price";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_unit_prie.DefaultCellStyle = dataGridViewCellStyle8;
-            this.col_unit_prie.HeaderText = "តម្លៃ/ឯកតា";
-            this.col_unit_prie.Name = "col_unit_prie";
-            this.col_unit_prie.ReadOnly = true;
-            this.col_unit_prie.Width = 92;
-            // 
-            // col_total
-            // 
-            this.col_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_total.DataPropertyName = "total_price";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_total.DefaultCellStyle = dataGridViewCellStyle9;
-            this.col_total.HeaderText = "តម្លៃសរុប";
-            this.col_total.Name = "col_total";
-            this.col_total.ReadOnly = true;
-            this.col_total.Width = 83;
-            // 
-            // col_currency
-            // 
-            this.col_currency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_currency.DataPropertyName = "currency";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_currency.DefaultCellStyle = dataGridViewCellStyle10;
-            this.col_currency.HeaderText = "រូបិយបណ្ណ";
-            this.col_currency.Name = "col_currency";
-            this.col_currency.ReadOnly = true;
-            this.col_currency.Width = 89;
             // 
             // panel7
             // 
@@ -592,6 +499,112 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(451, 524);
             this.panel6.TabIndex = 22;
+            // 
+            // col_delete
+            // 
+            this.col_delete.HeaderText = "";
+            this.col_delete.Name = "col_delete";
+            this.col_delete.ReadOnly = true;
+            this.col_delete.Text = "លុប";
+            this.col_delete.UseColumnTextForButtonValue = true;
+            this.col_delete.Width = 50;
+            // 
+            // col_lr
+            // 
+            this.col_lr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_lr.DefaultCellStyle = dataGridViewCellStyle26;
+            this.col_lr.HeaderText = "ល.រ";
+            this.col_lr.Name = "col_lr";
+            this.col_lr.ReadOnly = true;
+            this.col_lr.Width = 57;
+            // 
+            // col_pro_id
+            // 
+            this.col_pro_id.DataPropertyName = "pro_id";
+            this.col_pro_id.HeaderText = "pro_id";
+            this.col_pro_id.Name = "col_pro_id";
+            this.col_pro_id.ReadOnly = true;
+            this.col_pro_id.Visible = false;
+            // 
+            // col_pro_name
+            // 
+            this.col_pro_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_pro_name.DataPropertyName = "pro_name";
+            this.col_pro_name.HeaderText = "ឈ្មោះទំនិញ";
+            this.col_pro_name.Name = "col_pro_name";
+            this.col_pro_name.ReadOnly = true;
+            this.col_pro_name.Width = 99;
+            // 
+            // col_category
+            // 
+            this.col_category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_category.DataPropertyName = "category";
+            this.col_category.HeaderText = "ប្រភេទទំនិញ";
+            this.col_category.Name = "col_category";
+            this.col_category.ReadOnly = true;
+            this.col_category.Width = 102;
+            // 
+            // col_spl_id
+            // 
+            this.col_spl_id.DataPropertyName = "spl_id";
+            this.col_spl_id.HeaderText = "spl_id";
+            this.col_spl_id.Name = "col_spl_id";
+            this.col_spl_id.ReadOnly = true;
+            this.col_spl_id.Visible = false;
+            // 
+            // col_spl_name
+            // 
+            this.col_spl_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_spl_name.DataPropertyName = "spl_name";
+            this.col_spl_name.HeaderText = "អ្នកផ្គត់ផ្គង់";
+            this.col_spl_name.Name = "col_spl_name";
+            this.col_spl_name.ReadOnly = true;
+            this.col_spl_name.Width = 89;
+            // 
+            // col_qty
+            // 
+            this.col_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_qty.DataPropertyName = "qty";
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_qty.DefaultCellStyle = dataGridViewCellStyle27;
+            this.col_qty.HeaderText = "ចំនួនទំនិញ";
+            this.col_qty.Name = "col_qty";
+            this.col_qty.ReadOnly = true;
+            this.col_qty.Width = 94;
+            // 
+            // col_unit_prie
+            // 
+            this.col_unit_prie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_unit_prie.DataPropertyName = "unit_price";
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_unit_prie.DefaultCellStyle = dataGridViewCellStyle28;
+            this.col_unit_prie.HeaderText = "តម្លៃ/ឯកតា";
+            this.col_unit_prie.Name = "col_unit_prie";
+            this.col_unit_prie.ReadOnly = true;
+            this.col_unit_prie.Width = 92;
+            // 
+            // col_total
+            // 
+            this.col_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_total.DataPropertyName = "total_price";
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_total.DefaultCellStyle = dataGridViewCellStyle29;
+            this.col_total.HeaderText = "តម្លៃសរុប";
+            this.col_total.Name = "col_total";
+            this.col_total.ReadOnly = true;
+            this.col_total.Width = 83;
+            // 
+            // col_currency
+            // 
+            this.col_currency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_currency.DataPropertyName = "currency";
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_currency.DefaultCellStyle = dataGridViewCellStyle30;
+            this.col_currency.HeaderText = "រូបិយបណ្ណ";
+            this.col_currency.Name = "col_currency";
+            this.col_currency.ReadOnly = true;
+            this.col_currency.Width = 89;
             // 
             // frm_add_stock
             // 
@@ -669,6 +682,7 @@
         private System.Windows.Forms.RadioButton radRiel;
         private System.Windows.Forms.RadioButton radDollar;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridViewButtonColumn col_delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lr;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_pro_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_pro_name;

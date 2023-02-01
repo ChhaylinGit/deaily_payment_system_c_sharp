@@ -113,6 +113,7 @@ namespace Daily_Payment_System.Forms.Stock
                     lblProduct.Text = product.pro_name;
                     lblCategory.Text = product.category;
                     picProduct.Image = product.image == null ? Properties.Resources.no_image : Settings.ConvertImage(product.image);
+                    panel4.Enabled = true;
                 }
                 cboSuplier.DataSource = query;
                 cboSuplier.DisplayMember = "spl_name";
@@ -167,7 +168,11 @@ namespace Daily_Payment_System.Forms.Stock
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            dgvStock.Rows.Add(null, product.pro_id, product.pro_name, product.category, cboSuplier.SelectedValue, cboSuplier.Text, txtQTY.Text, txtUnitPrice.Text, lblTotalPrice.Text,getCurrencyText());
+            dgvStock.Rows.Add(null,null, product.pro_id, product.pro_name, product.category, cboSuplier.SelectedValue, cboSuplier.Text, txtQTY.Text, txtUnitPrice.Text, lblTotalPrice.Text,getCurrencyText());
+            lblProduct.Text = "";
+            lblCategory.Text = "";
+            picProduct.Image = Properties.Resources.no_image;
+            panel4.Enabled = false;
         }
 
         private void dgvStock_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
