@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -174,6 +175,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tbl_category.cs">
+      <DependentUpon>DPS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_invoice.cs">
+      <DependentUpon>DPS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_invoice_detail.cs">
       <DependentUpon>DPS_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_product.cs">

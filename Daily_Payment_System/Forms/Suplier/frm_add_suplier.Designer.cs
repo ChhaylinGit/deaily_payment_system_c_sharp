@@ -35,11 +35,13 @@
             this.txtSuplier = new System.Windows.Forms.TextBox();
             this.txtPlace = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 231);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 272);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(485, 22);
             this.statusStrip1.TabIndex = 20;
@@ -53,7 +55,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::Daily_Payment_System.Properties.Resources.save_24px;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(358, 177);
+            this.btnSave.Location = new System.Drawing.Point(358, 217);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(99, 38);
@@ -69,7 +71,7 @@
             this.chkStatus.AutoSize = true;
             this.chkStatus.Checked = true;
             this.chkStatus.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkStatus.Location = new System.Drawing.Point(91, 177);
+            this.chkStatus.Location = new System.Drawing.Point(91, 217);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Size = new System.Drawing.Size(78, 28);
             this.chkStatus.TabIndex = 18;
@@ -94,7 +96,7 @@
             // 
             // txtPlace
             // 
-            this.txtPlace.Location = new System.Drawing.Point(91, 52);
+            this.txtPlace.Location = new System.Drawing.Point(91, 92);
             this.txtPlace.Multiline = true;
             this.txtPlace.Name = "txtPlace";
             this.txtPlace.Size = new System.Drawing.Size(366, 119);
@@ -103,17 +105,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 55);
+            this.label1.Location = new System.Drawing.Point(44, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 24);
             this.label1.TabIndex = 22;
             this.label1.Text = "ទីតាំង";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 24);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "លេខទូរសព្ទ";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(91, 52);
+            this.txtTel.Mask = "999-000-0000";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(366, 32);
+            this.txtTel.TabIndex = 25;
+            this.txtTel.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // frm_add_suplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 253);
+            this.ClientSize = new System.Drawing.Size(485, 294);
+            this.Controls.Add(this.txtTel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPlace);
             this.Controls.Add(this.statusStrip1);
@@ -144,5 +166,7 @@
         private System.Windows.Forms.TextBox txtSuplier;
         private System.Windows.Forms.TextBox txtPlace;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox txtTel;
     }
 }

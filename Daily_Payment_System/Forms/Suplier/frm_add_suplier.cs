@@ -59,6 +59,7 @@ namespace Daily_Payment_System.Forms.Suplier
             {
                 tbl_supplier supplier = new tbl_supplier();
                 supplier.spl_name = txtSuplier.Text.Trim();
+                supplier.tel = txtTel.Text.Trim();
                 supplier.place = txtPlace.Text.Trim();
                 supplier.status = chkStatus.Checked;
                 supplier.entry_date = DateTime.Now;
@@ -83,6 +84,7 @@ namespace Daily_Payment_System.Forms.Suplier
             {
                 tbl_supplier supplier = ConstantField.entities.tbl_supplier.Where(f => f.spl_id == this.supplier.spl_id).SingleOrDefault();
                 supplier.spl_name = txtSuplier.Text.Trim();
+                supplier.tel = txtTel.Text.Trim();
                 supplier.place = txtPlace.Text.Trim();
                 supplier.status = chkStatus.Checked;
                 supplier.edit_date = DateTime.Now;
@@ -109,6 +111,7 @@ namespace Daily_Payment_System.Forms.Suplier
             if (this.supplier.spl_id != 0)
             {
                 txtSuplier.Text = supplier.spl_name;
+                txtTel.Text = supplier.tel;
                 txtPlace.Text = supplier.place;
                 chkStatus.Checked = supplier.status;
                 btnSave.Tag = 1;

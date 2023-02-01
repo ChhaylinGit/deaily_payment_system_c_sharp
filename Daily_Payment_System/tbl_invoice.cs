@@ -12,14 +12,11 @@ namespace Daily_Payment_System
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_supplier
+    public partial class tbl_invoice
     {
-        public int spl_id { get; set; }
-        public string spl_name { get; set; }
-        public string tel { get; set; }
-        public string place { get; set; }
+        public int inv_id { get; set; }
+        public string inv_code { get; set; }
+        public System.DateTime inv_date { get; set; }
         public System.DateTime entry_date { get; set; }
-        public Nullable<System.DateTime> edit_date { get; set; }
-        public bool status { get; set; }
     }
 }

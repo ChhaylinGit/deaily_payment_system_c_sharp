@@ -15,6 +15,27 @@
           <Property Name="edit_date" Type="datetime" />
           <Property Name="status" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="tbl_invoice">
+          <Key>
+            <PropertyRef Name="inv_id" />
+          </Key>
+          <Property Name="inv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inv_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="inv_date" Type="datetime" Nullable="false" />
+          <Property Name="entry_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_invoice_detail">
+          <Key>
+            <PropertyRef Name="inv_detail_id" />
+          </Key>
+          <Property Name="inv_detail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inv_id" Type="int" Nullable="false" />
+          <Property Name="pro_id" Type="int" Nullable="false" />
+          <Property Name="spl_id" Type="int" Nullable="false" />
+          <Property Name="cur_id" Type="int" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="unit_price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="tbl_product">
           <Key>
             <PropertyRef Name="pro_id" />
@@ -45,7 +66,8 @@
           </Key>
           <Property Name="spl_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="spl_name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="place" Type="nvarchar" MaxLength="500" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="place" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="entry_date" Type="datetime" Nullable="false" />
           <Property Name="edit_date" Type="datetime" />
           <Property Name="status" Type="bit" Nullable="false" />
@@ -104,6 +126,8 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_stock' does not have a 
         </EntityType>
         <EntityContainer Name="DailyPaymentModelStoreContainer">
           <EntitySet Name="tbl_category" EntityType="Self.tbl_category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_invoice" EntityType="Self.tbl_invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_invoice_detail" EntityType="Self.tbl_invoice_detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_stock" EntityType="Self.tbl_stock" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_supplier" EntityType="Self.tbl_supplier" Schema="dbo" store:Type="Tables" />
@@ -145,9 +169,11 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_stock' does not have a 
           <EntitySet Name="tbl_category" EntityType="DailyPaymentModel.tbl_category" />
           <EntitySet Name="tbl_product" EntityType="DailyPaymentModel.tbl_product" />
           <EntitySet Name="vw_select_product" EntityType="DailyPaymentModel.vw_select_product" />
-          <EntitySet Name="tbl_supplier" EntityType="DailyPaymentModel.tbl_supplier" />
           <EntitySet Name="tbl_stock" EntityType="DailyPaymentModel.tbl_stock" />
           <EntitySet Name="vw_select_stock" EntityType="DailyPaymentModel.vw_select_stock" />
+          <EntitySet Name="tbl_invoice" EntityType="DailyPaymentModel.tbl_invoice" />
+          <EntitySet Name="tbl_supplier" EntityType="DailyPaymentModel.tbl_supplier" />
+          <EntitySet Name="tbl_invoice_detail" EntityType="DailyPaymentModel.tbl_invoice_detail" />
         </EntityContainer>
         <EntityType Name="tbl_category">
           <Key>
@@ -186,17 +212,6 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_stock' does not have a 
           <Property Name="category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="status" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbl_supplier">
-          <Key>
-            <PropertyRef Name="spl_id" />
-          </Key>
-          <Property Name="spl_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="spl_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="place" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="edit_date" Type="DateTime" Precision="3" />
           <Property Name="status" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_stock">
@@ -242,6 +257,39 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_stock' does not have a 
           <Property Name="sign" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="st_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="tbl_invoice">
+          <Key>
+            <PropertyRef Name="inv_id" />
+          </Key>
+          <Property Name="inv_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inv_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="inv_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_supplier">
+          <Key>
+            <PropertyRef Name="spl_id" />
+          </Key>
+          <Property Name="spl_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="spl_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="place" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="entry_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="edit_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_invoice_detail">
+          <Key>
+            <PropertyRef Name="inv_detail_id" />
+          </Key>
+          <Property Name="inv_detail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inv_id" Type="Int32" Nullable="false" />
+          <Property Name="pro_id" Type="Int32" Nullable="false" />
+          <Property Name="spl_id" Type="Int32" Nullable="false" />
+          <Property Name="cur_id" Type="Int32" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="unit_price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -285,18 +333,6 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_stock' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_supplier">
-            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_supplier">
-              <MappingFragment StoreEntitySet="tbl_supplier">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="edit_date" ColumnName="edit_date" />
-                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
-                <ScalarProperty Name="place" ColumnName="place" />
-                <ScalarProperty Name="spl_name" ColumnName="spl_name" />
-                <ScalarProperty Name="spl_id" ColumnName="spl_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbl_stock">
             <EntityTypeMapping TypeName="DailyPaymentModel.tbl_stock">
               <MappingFragment StoreEntitySet="tbl_stock">
@@ -327,6 +363,42 @@ warning 6002: The table/view 'DailyPayment.dbo.vw_select_stock' does not have a 
                 <ScalarProperty Name="cat_id" ColumnName="cat_id" />
                 <ScalarProperty Name="pro_id" ColumnName="pro_id" />
                 <ScalarProperty Name="st_id" ColumnName="st_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_invoice">
+            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_invoice">
+              <MappingFragment StoreEntitySet="tbl_invoice">
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+                <ScalarProperty Name="inv_date" ColumnName="inv_date" />
+                <ScalarProperty Name="inv_code" ColumnName="inv_code" />
+                <ScalarProperty Name="inv_id" ColumnName="inv_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_supplier">
+            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_supplier">
+              <MappingFragment StoreEntitySet="tbl_supplier">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="edit_date" ColumnName="edit_date" />
+                <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="spl_name" ColumnName="spl_name" />
+                <ScalarProperty Name="spl_id" ColumnName="spl_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_invoice_detail">
+            <EntityTypeMapping TypeName="DailyPaymentModel.tbl_invoice_detail">
+              <MappingFragment StoreEntitySet="tbl_invoice_detail">
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="cur_id" ColumnName="cur_id" />
+                <ScalarProperty Name="spl_id" ColumnName="spl_id" />
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+                <ScalarProperty Name="inv_id" ColumnName="inv_id" />
+                <ScalarProperty Name="inv_detail_id" ColumnName="inv_detail_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

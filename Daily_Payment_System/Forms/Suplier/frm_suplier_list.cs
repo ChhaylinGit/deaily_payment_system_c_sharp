@@ -73,7 +73,8 @@ namespace Daily_Payment_System.Forms.Suplier
                     {
                         spl_id = Convert.ToInt32(dgvSuplier.CurrentRow.Cells["col_spl_id"].Value),
                         spl_name = dgvSuplier.CurrentRow.Cells["col_spl"].Value.ToString(),
-                        place = dgvSuplier.CurrentRow.Cells["col_place"].Value.ToString(),
+                        tel = dgvSuplier.CurrentRow.Cells["col_tel"].Value == null ? "" : dgvSuplier.CurrentRow.Cells["col_tel"].Value.ToString(),
+                        place = dgvSuplier.CurrentRow.Cells["col_place"].Value == null ? "" : dgvSuplier.CurrentRow.Cells["col_place"].Value.ToString(),
                         status = Convert.ToBoolean(dgvSuplier.CurrentRow.Cells["col_status"].Value)
                     };
                     editSuplier(supplier);

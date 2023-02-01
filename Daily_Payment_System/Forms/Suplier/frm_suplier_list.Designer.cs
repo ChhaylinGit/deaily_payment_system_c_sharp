@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -37,15 +37,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgvSuplier = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.col_edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.col_lr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_spl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_spl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_entry_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_edit_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuplier)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +117,7 @@
             this.col_lr,
             this.col_spl_id,
             this.col_spl,
+            this.col_tel,
             this.col_place,
             this.col_entry_date,
             this.col_status,
@@ -129,6 +131,17 @@
             this.dgvSuplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuplier_CellClick);
             this.dgvSuplier.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvSuplier_RowsAdded);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewImageColumn1.DataPropertyName = "image";
+            this.dataGridViewImageColumn1.HeaderText = "រូបភាព";
+            this.dataGridViewImageColumn1.Image = global::Daily_Payment_System.Properties.Resources.no_image;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // col_edit
             // 
             this.col_edit.HeaderText = "";
@@ -141,8 +154,8 @@
             // col_lr
             // 
             this.col_lr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_lr.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_lr.DefaultCellStyle = dataGridViewCellStyle1;
             this.col_lr.HeaderText = "ល.រ";
             this.col_lr.Name = "col_lr";
             this.col_lr.ReadOnly = true;
@@ -163,6 +176,15 @@
             this.col_spl.Name = "col_spl";
             this.col_spl.ReadOnly = true;
             // 
+            // col_tel
+            // 
+            this.col_tel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_tel.DataPropertyName = "tel";
+            this.col_tel.HeaderText = "លេខទូរសព្ទ";
+            this.col_tel.Name = "col_tel";
+            this.col_tel.ReadOnly = true;
+            this.col_tel.Width = 97;
+            // 
             // col_place
             // 
             this.col_place.DataPropertyName = "place";
@@ -174,9 +196,9 @@
             // 
             this.col_entry_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.col_entry_date.DataPropertyName = "entry_date";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            this.col_entry_date.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.col_entry_date.DefaultCellStyle = dataGridViewCellStyle2;
             this.col_entry_date.HeaderText = "កាលបរិច្ឆេទបញ្ចូល";
             this.col_entry_date.Name = "col_entry_date";
             this.col_entry_date.ReadOnly = true;
@@ -200,17 +222,6 @@
             this.col_edit_date.Name = "col_edit_date";
             this.col_edit_date.ReadOnly = true;
             this.col_edit_date.Visible = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewImageColumn1.DataPropertyName = "image";
-            this.dataGridViewImageColumn1.HeaderText = "រូបភាព";
-            this.dataGridViewImageColumn1.Image = global::Daily_Payment_System.Properties.Resources.no_image;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frm_suplier_list
             // 
@@ -250,6 +261,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lr;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_spl_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_spl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_place;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_entry_date;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_status;

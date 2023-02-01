@@ -39,11 +39,13 @@
             this.sub_tsm_product = new System.Windows.Forms.ToolStripMenuItem();
             this.sub_tsm_category = new System.Windows.Forms.ToolStripMenuItem();
             this.sub_tsm_supplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_stock = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.sub_tsm_stock = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_add_stock = new System.Windows.Forms.ToolStripMenuItem();
+            this.sub_tsm_stock_infor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +133,16 @@
             this.sub_tsm_supplier.Text = "អ្នកផ្គត់ផ្គង់";
             this.sub_tsm_supplier.Click += new System.EventHandler(this.sub_tsm_supplier_Click);
             // 
+            // sub_tsm_stock
+            // 
+            this.sub_tsm_stock.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sub_tsm_add_stock,
+            this.sub_tsm_stock_infor});
+            this.sub_tsm_stock.Name = "sub_tsm_stock";
+            this.sub_tsm_stock.Size = new System.Drawing.Size(180, 28);
+            this.sub_tsm_stock.Text = "ស្តុកទំនិញ";
+            this.sub_tsm_stock.Click += new System.EventHandler(this.sub_tsm_stock_Click);
+            // 
             // toolStrip
             // 
             this.toolStrip.Font = new System.Drawing.Font("Khmer OS Battambang", 9F);
@@ -157,12 +169,19 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // sub_tsm_stock
+            // sub_tsm_add_stock
             // 
-            this.sub_tsm_stock.Name = "sub_tsm_stock";
-            this.sub_tsm_stock.Size = new System.Drawing.Size(180, 28);
-            this.sub_tsm_stock.Text = "ស្តុកទំនិញ";
-            this.sub_tsm_stock.Click += new System.EventHandler(this.sub_tsm_stock_Click);
+            this.sub_tsm_add_stock.Name = "sub_tsm_add_stock";
+            this.sub_tsm_add_stock.Size = new System.Drawing.Size(180, 28);
+            this.sub_tsm_add_stock.Text = "បញ្ចូលស្តុក";
+            this.sub_tsm_add_stock.Click += new System.EventHandler(this.sub_tsm_add_stock_Click);
+            // 
+            // sub_tsm_stock_infor
+            // 
+            this.sub_tsm_stock_infor.Name = "sub_tsm_stock_infor";
+            this.sub_tsm_stock_infor.Size = new System.Drawing.Size(180, 28);
+            this.sub_tsm_stock_infor.Text = "ព័ត៌មានស្តុក";
+            this.sub_tsm_stock_infor.Click += new System.EventHandler(this.sub_tsm_stock_infor_Click);
             // 
             // frm_main
             // 
@@ -206,6 +225,8 @@
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_category;
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_supplier;
         private System.Windows.Forms.ToolStripMenuItem sub_tsm_stock;
+        private System.Windows.Forms.ToolStripMenuItem sub_tsm_add_stock;
+        private System.Windows.Forms.ToolStripMenuItem sub_tsm_stock_infor;
     }
 }
 

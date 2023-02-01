@@ -151,13 +151,7 @@ namespace Daily_Payment_System.Forms
 
         private void sub_tsm_stock_Click(object sender, EventArgs e)
         {
-            stock_list = new frm_stock_list();
-            stock_list.MdiParent = this;
-            stock_list.Show();
-            //stock = new frm_add_stock();
-            //stock.MdiParent = this;
-            //stock.openProductListForm += openProductListForm;
-            //stock.Show();
+          
         }
 
         private void openProductListForm()
@@ -180,6 +174,21 @@ namespace Daily_Payment_System.Forms
             stock.Show();
             stock.openProductListForm += openProductListForm;
             product_List.Close();
+        }
+
+        private void sub_tsm_stock_infor_Click(object sender, EventArgs e)
+        {
+            stock_list = new frm_stock_list();
+            stock_list.MdiParent = this;
+            stock_list.Show();
+        }
+
+        private void sub_tsm_add_stock_Click(object sender, EventArgs e)
+        {
+            stock = new frm_add_stock();
+            stock.MdiParent = this;
+            stock.openProductListForm += openProductListForm;
+            stock.Show();
         }
     }
 }
