@@ -104,6 +104,7 @@ namespace Daily_Payment_System.Forms.Product
                         image = (byte[])dgvProduct.Rows[e.RowIndex].Cells["col_img"].Value
                     };
                     SelectProductEvent(product);
+                    this.Close();
                 }
             }
         }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.cboSuplier = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,11 +63,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvStock = new System.Windows.Forms.DataGridView();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.col_delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.col_lr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_pro_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +74,11 @@
             this.col_unit_prie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_currency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -446,6 +446,112 @@
             this.dgvStock.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvStock_RowsAdded);
             this.dgvStock.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvStock_RowsRemoved);
             // 
+            // col_delete
+            // 
+            this.col_delete.HeaderText = "";
+            this.col_delete.Name = "col_delete";
+            this.col_delete.ReadOnly = true;
+            this.col_delete.Text = "លុប";
+            this.col_delete.UseColumnTextForButtonValue = true;
+            this.col_delete.Width = 50;
+            // 
+            // col_lr
+            // 
+            this.col_lr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_lr.DefaultCellStyle = dataGridViewCellStyle1;
+            this.col_lr.HeaderText = "ល.រ";
+            this.col_lr.Name = "col_lr";
+            this.col_lr.ReadOnly = true;
+            this.col_lr.Width = 57;
+            // 
+            // col_pro_id
+            // 
+            this.col_pro_id.DataPropertyName = "pro_id";
+            this.col_pro_id.HeaderText = "pro_id";
+            this.col_pro_id.Name = "col_pro_id";
+            this.col_pro_id.ReadOnly = true;
+            this.col_pro_id.Visible = false;
+            // 
+            // col_pro_name
+            // 
+            this.col_pro_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_pro_name.DataPropertyName = "pro_name";
+            this.col_pro_name.HeaderText = "ឈ្មោះទំនិញ";
+            this.col_pro_name.Name = "col_pro_name";
+            this.col_pro_name.ReadOnly = true;
+            this.col_pro_name.Width = 99;
+            // 
+            // col_category
+            // 
+            this.col_category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_category.DataPropertyName = "category";
+            this.col_category.HeaderText = "ប្រភេទទំនិញ";
+            this.col_category.Name = "col_category";
+            this.col_category.ReadOnly = true;
+            this.col_category.Width = 102;
+            // 
+            // col_spl_id
+            // 
+            this.col_spl_id.DataPropertyName = "spl_id";
+            this.col_spl_id.HeaderText = "spl_id";
+            this.col_spl_id.Name = "col_spl_id";
+            this.col_spl_id.ReadOnly = true;
+            this.col_spl_id.Visible = false;
+            // 
+            // col_spl_name
+            // 
+            this.col_spl_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_spl_name.DataPropertyName = "spl_name";
+            this.col_spl_name.HeaderText = "អ្នកផ្គត់ផ្គង់";
+            this.col_spl_name.Name = "col_spl_name";
+            this.col_spl_name.ReadOnly = true;
+            this.col_spl_name.Width = 89;
+            // 
+            // col_qty
+            // 
+            this.col_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_qty.DataPropertyName = "qty";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_qty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.col_qty.HeaderText = "ចំនួនទំនិញ";
+            this.col_qty.Name = "col_qty";
+            this.col_qty.ReadOnly = true;
+            this.col_qty.Width = 94;
+            // 
+            // col_unit_prie
+            // 
+            this.col_unit_prie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_unit_prie.DataPropertyName = "unit_price";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_unit_prie.DefaultCellStyle = dataGridViewCellStyle3;
+            this.col_unit_prie.HeaderText = "តម្លៃ/ឯកតា";
+            this.col_unit_prie.Name = "col_unit_prie";
+            this.col_unit_prie.ReadOnly = true;
+            this.col_unit_prie.Width = 92;
+            // 
+            // col_total
+            // 
+            this.col_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_total.DataPropertyName = "total_price";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_total.DefaultCellStyle = dataGridViewCellStyle4;
+            this.col_total.HeaderText = "តម្លៃសរុប";
+            this.col_total.Name = "col_total";
+            this.col_total.ReadOnly = true;
+            this.col_total.Width = 83;
+            // 
+            // col_currency
+            // 
+            this.col_currency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_currency.DataPropertyName = "currency";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.col_currency.DefaultCellStyle = dataGridViewCellStyle5;
+            this.col_currency.HeaderText = "រូបិយបណ្ណ";
+            this.col_currency.Name = "col_currency";
+            this.col_currency.ReadOnly = true;
+            this.col_currency.Width = 89;
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.panel8);
@@ -500,112 +606,6 @@
             this.panel6.Size = new System.Drawing.Size(451, 524);
             this.panel6.TabIndex = 22;
             // 
-            // col_delete
-            // 
-            this.col_delete.HeaderText = "";
-            this.col_delete.Name = "col_delete";
-            this.col_delete.ReadOnly = true;
-            this.col_delete.Text = "លុប";
-            this.col_delete.UseColumnTextForButtonValue = true;
-            this.col_delete.Width = 50;
-            // 
-            // col_lr
-            // 
-            this.col_lr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_lr.DefaultCellStyle = dataGridViewCellStyle26;
-            this.col_lr.HeaderText = "ល.រ";
-            this.col_lr.Name = "col_lr";
-            this.col_lr.ReadOnly = true;
-            this.col_lr.Width = 57;
-            // 
-            // col_pro_id
-            // 
-            this.col_pro_id.DataPropertyName = "pro_id";
-            this.col_pro_id.HeaderText = "pro_id";
-            this.col_pro_id.Name = "col_pro_id";
-            this.col_pro_id.ReadOnly = true;
-            this.col_pro_id.Visible = false;
-            // 
-            // col_pro_name
-            // 
-            this.col_pro_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_pro_name.DataPropertyName = "pro_name";
-            this.col_pro_name.HeaderText = "ឈ្មោះទំនិញ";
-            this.col_pro_name.Name = "col_pro_name";
-            this.col_pro_name.ReadOnly = true;
-            this.col_pro_name.Width = 99;
-            // 
-            // col_category
-            // 
-            this.col_category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_category.DataPropertyName = "category";
-            this.col_category.HeaderText = "ប្រភេទទំនិញ";
-            this.col_category.Name = "col_category";
-            this.col_category.ReadOnly = true;
-            this.col_category.Width = 102;
-            // 
-            // col_spl_id
-            // 
-            this.col_spl_id.DataPropertyName = "spl_id";
-            this.col_spl_id.HeaderText = "spl_id";
-            this.col_spl_id.Name = "col_spl_id";
-            this.col_spl_id.ReadOnly = true;
-            this.col_spl_id.Visible = false;
-            // 
-            // col_spl_name
-            // 
-            this.col_spl_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_spl_name.DataPropertyName = "spl_name";
-            this.col_spl_name.HeaderText = "អ្នកផ្គត់ផ្គង់";
-            this.col_spl_name.Name = "col_spl_name";
-            this.col_spl_name.ReadOnly = true;
-            this.col_spl_name.Width = 89;
-            // 
-            // col_qty
-            // 
-            this.col_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_qty.DataPropertyName = "qty";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_qty.DefaultCellStyle = dataGridViewCellStyle27;
-            this.col_qty.HeaderText = "ចំនួនទំនិញ";
-            this.col_qty.Name = "col_qty";
-            this.col_qty.ReadOnly = true;
-            this.col_qty.Width = 94;
-            // 
-            // col_unit_prie
-            // 
-            this.col_unit_prie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_unit_prie.DataPropertyName = "unit_price";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_unit_prie.DefaultCellStyle = dataGridViewCellStyle28;
-            this.col_unit_prie.HeaderText = "តម្លៃ/ឯកតា";
-            this.col_unit_prie.Name = "col_unit_prie";
-            this.col_unit_prie.ReadOnly = true;
-            this.col_unit_prie.Width = 92;
-            // 
-            // col_total
-            // 
-            this.col_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_total.DataPropertyName = "total_price";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_total.DefaultCellStyle = dataGridViewCellStyle29;
-            this.col_total.HeaderText = "តម្លៃសរុប";
-            this.col_total.Name = "col_total";
-            this.col_total.ReadOnly = true;
-            this.col_total.Width = 83;
-            // 
-            // col_currency
-            // 
-            this.col_currency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col_currency.DataPropertyName = "currency";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col_currency.DefaultCellStyle = dataGridViewCellStyle30;
-            this.col_currency.HeaderText = "រូបិយបណ្ណ";
-            this.col_currency.Name = "col_currency";
-            this.col_currency.ReadOnly = true;
-            this.col_currency.Width = 89;
-            // 
             // frm_add_stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
@@ -659,7 +659,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel lblSelectProduct;
         private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.MaskedTextBox txtQTY;
         private System.Windows.Forms.MaskedTextBox txtUnitPrice;
         private System.Windows.Forms.Label label2;
@@ -693,5 +692,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_unit_prie;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_currency;
+        public System.Windows.Forms.Label lblProduct;
     }
 }

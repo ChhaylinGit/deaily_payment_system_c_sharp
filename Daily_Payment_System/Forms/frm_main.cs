@@ -5,13 +5,6 @@ using Daily_Payment_System.Forms.Stock;
 using Daily_Payment_System.Forms.Suplier;
 using Daily_Payment_System.Msg;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Daily_Payment_System.Forms
@@ -35,6 +28,8 @@ namespace Daily_Payment_System.Forms
 
         private frm_stock_list stock_list;
         private frm_add_stock stock;
+
+
 
         public frm_main()
         {
@@ -156,7 +151,7 @@ namespace Daily_Payment_System.Forms
 
         private void openProductListForm()
         {
-            product_List = new frm_product_list();
+            //product_List = new frm_product_list();
             product_List.SelectProductEvent += SelectProductEvent;
             product_List.btnAdd.Visible = false;
             product_List.dgvProduct.Columns["col_edit"].Visible = false;
@@ -168,12 +163,14 @@ namespace Daily_Payment_System.Forms
 
         private void SelectProductEvent(vw_select_product product)
         {
-            stock.Close();
-            stock = new frm_add_stock(product);
+            //stock.Close();
+            //product_List.Close();
+            //stock = new frm_add_stock(product);
+            stock.lblProduct.Text = product.pro_name;
             stock.MdiParent = this;
-            stock.Show();
+            
             stock.openProductListForm += openProductListForm;
-            product_List.Close();
+            stock.Show();
         }
 
         private void sub_tsm_stock_infor_Click(object sender, EventArgs e)
@@ -186,9 +183,9 @@ namespace Daily_Payment_System.Forms
         private void sub_tsm_add_stock_Click(object sender, EventArgs e)
         {
             stock = new frm_add_stock();
-            stock.MdiParent = this;
-            stock.openProductListForm += openProductListForm;
-            stock.Show();
+            //stock.MdiParent = this;
+            //stock.openProductListForm += openProductListForm;
+            stock.ShowDialog();
         }
     }
 }
